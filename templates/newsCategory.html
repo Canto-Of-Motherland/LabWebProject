@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>新闻-{{ data.news_category }}</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/newsCategory.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/newsCategory.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">{{ data.news_category }}</a>
+        </div>
+        <div class="news_list">
+            <div class="split_item_top"></div>
+            <div class="news_list_title">{{ data.news_category }}</div>
+            <div class="news_item_container">
+                {% for news in data.news_list %}
+                    <a class="news_item" href="{% url 'LabWebApp:newsDetail' news_url=news.news_id %}">
+                        <div class="news_month_date">
+                            <div class="news_month">{{ news.news_post_month }}</div>
+                            <div class="news_date">{{ news.news_post_date }}</div>    
+                            <img class="svg_building_news" src="{% static 'svg/building.svg' %}">
+                        </div>
+                        <div class="news_title">{{ news.news_title }}</div>
+                        <div class="news_abstract">{{ news.news_abstract }}</div>
+                        <div class="split_item"></div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="navigation_page">
+            <div class="navigation_page_container">
+                <img class="svg_to_before" src="{% static 'svg/to_before.svg' %}" onclick="toPreviousPage()">
+                <label class="label_page">第</label>
+                <input type="text" class="input_page_number" value="{{data.page_number}}" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <label class="label_page">页 / 共 {{data.page_total}} 页</label>
+                <script type="text/javascript">
+                    const pageMax = parseInt('{{data.page_total}}');
+                </script>
+                <button type="button" class="btn_page" onclick="toPage()">跳 转</button>
+                <img class="svg_to_after" src="{% static 'svg/to_after.svg' %}" onclick="toNextPage()">
+            </div>
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,84 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>新闻控制台-{{ data.news_title }}</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker-zh-CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminNewsDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap-datetimepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminNewsDetail.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <div class="operate_panel">
+            <a class="to_back" href="{% url 'LabWebApp:adminNews' %}">&lt; 返回新闻列表</a>
+            <div class="operate_panel_content">
+                <div class="block_title">
+                    <label class="labels label_title">新闻标题</label>
+                    <input type="text" class="inputs input_title" name="input_title" id="input_title" placeholder="请输入标题">
+                    <script type="text/javascript">
+                        let title = '{{ data.news_title }}';
+                        if (title !== '发布新闻') {
+                            $('.input_title').val('{{ data.news_title }}');
+                        }
+                    </script>
+                </div>
+                <div class="block_news_category">
+                    <label class="labels label_news_category">新闻类别</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_1" name="radios" value="1">学术科研</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_2" name="radios" value="2">团队喜讯</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_2" name="radios" value="3">讲座论坛</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_2" name="radios" value="4">生活文化</label>
+                </div>
+                <script type="text/javascript">
+                    let value = '{{ data.news_category }}';
+                    $('.radio_' + value).prop('checked', true);
+                </script>
+                <div class="block_post_datetime">
+                    <label class="labels label_post_datetime">发布日期</label>
+                    <input class="inputs input_post_datetime" name="input_post_datetime" id="input_post_datetime" placeholder="请选择日期" data-date-format="yyyy-mm-dd hh:mm:ss" value="{{ data.news_post_datetime }}">
+                </div>
+                <div class="block_author">
+                    <label class="labels label_author">　撰稿人</label>
+                    <input type="text" class="inputs input_author" name="input_author" id="input_author" placeholder="请输入撰稿人" value="{{ data.news_author }}">
+                </div>
+                <div class="block_photographer">
+                    <label class="labels label_photographer">　　摄影</label>
+                    <input type="text" class="inputs input_photographer" name="input_photographer" id="input_photographer" placeholder="请输入摄影人员"  value="{{ data.news_photographer }}">
+                </div>
+                <div class="block_content">
+                    <label class="labels label_content">新闻内容</label>
+                    <textarea class="textarea_content" name="textarea_content" id="textarea_content" placeholder="请输入新闻内容">{{ data.news_content }}</textarea>
+                </div>
+                <div class="tips tip_content">*如需插入图片，请按照此格式输入：(示例图片.jpg)[示例图片的注释]</div>
+                <div class="block_photo_upload">
+                    <label class="labels label_photo_upload">上传配图</label>
+                    <div class="block_photo">
+                        <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" multiple="" onchange="setPath(this)">
+                        <div class="occupy_photo_upload"></div>
+                        <script type="text/javascript">
+                            let occupy = '{{ data.news_photo }}';
+                            if (occupy !== '') {
+                                $('.occupy_photo_upload').text(occupy);
+                            } else {
+                                $('.occupy_photo_upload').text('未选择');
+                            }
+                        </script>
+                        <button type="button" class="btn_upload">上传图片</button>
+                        <button type="button" class="btn_clear" onclick="clearPath()">清空已上传图片</button>
+                    </div>
+                </div>
+                <div class="tips tip_content">*请按序上传图片</div>
+                <div class="block_confirm">
+                    <label class="label_tip"></label>
+                    <button type="button" class="btn_submit" onclick="submit()">保　存</button>
+                    <button type="button" class="btn_cancel" onclick="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

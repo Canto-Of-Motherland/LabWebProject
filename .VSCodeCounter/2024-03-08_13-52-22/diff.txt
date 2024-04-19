@@ -1,0 +1,44 @@
+Date : 2024-03-08 13:52:22
+Directory : d:\Desktop\LabWeb\LabWebProject
+Total : 13 files,  336 codes, 0 comments, 37 blanks, all 373 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| CSS      |          6 |        242 |          0 |         35 |        277 |
+| HTML     |          5 |         75 |          0 |          0 |         75 |
+| Python   |          2 |         19 |          0 |          2 |         21 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                  |         13 |        336 |          0 |         37 |        373 |
+| LabWebApp                                                          |          2 |         19 |          0 |          2 |         21 |
+| static                                                             |          6 |        242 |          0 |         35 |        277 |
+| static\css                                                         |          6 |        242 |          0 |         35 |        277 |
+| static\css\self                                                    |          6 |        242 |          0 |         35 |        277 |
+| templates                                                          |          5 |         75 |          0 |          0 |         75 |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                           | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\urls.py                  | Python   |          1 |          0 |          0 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\views.py                 | Python   |         18 |          0 |          2 |         20 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\main.css           | CSS      |          1 |          0 |          0 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\newsCategory.css   | CSS      |          2 |          0 |          0 |          2 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\newsDetail.css     | CSS      |          1 |          0 |          0 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\researchField.css  | CSS      |         35 |          0 |          7 |         42 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\researchThesis.css | CSS      |         35 |          0 |          5 |         40 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\researchWork.css   | CSS      |        168 |          0 |         23 |        191 |
+| d:\Desktop\LabWeb\LabWebProject\templates\base.html                | HTML     |          2 |          0 |          0 |          2 |
+| d:\Desktop\LabWeb\LabWebProject\templates\member.html              | HTML     |         11 |          0 |          0 |         11 |
+| d:\Desktop\LabWeb\LabWebProject\templates\researchField.html       | HTML     |          9 |          0 |          0 |          9 |
+| d:\Desktop\LabWeb\LabWebProject\templates\researchThesis.html      | HTML     |          9 |          0 |          0 |          9 |
+| d:\Desktop\LabWeb\LabWebProject\templates\researchWork.html        | HTML     |         44 |          0 |          0 |         44 |
+| Total                                                              |          |        336 |          0 |         37 |        373 |
++--------------------------------------------------------------------+----------+------------+------------+------------+------------+

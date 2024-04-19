@@ -1,0 +1,15 @@
+"filename", "language", "HTML", "Python", "CSS", "comment", "blank", "total"
+"d:\Desktop\LabWeb\LabWebProject\LabWebApp\urls.py", "Python", 0, 1, 0, 0, 0, 1
+"d:\Desktop\LabWeb\LabWebProject\LabWebApp\views.py", "Python", 0, 18, 0, 0, 2, 20
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\main.css", "CSS", 0, 0, 1, 0, 0, 1
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\newsCategory.css", "CSS", 0, 0, 2, 0, 0, 2
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\newsDetail.css", "CSS", 0, 0, 1, 0, 0, 1
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\researchField.css", "CSS", 0, 0, 35, 0, 7, 42
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\researchThesis.css", "CSS", 0, 0, 35, 0, 5, 40
+"d:\Desktop\LabWeb\LabWebProject\static\css\self\researchWork.css", "CSS", 0, 0, 168, 0, 23, 191
+"d:\Desktop\LabWeb\LabWebProject\templates\base.html", "HTML", 2, 0, 0, 0, 0, 2
+"d:\Desktop\LabWeb\LabWebProject\templates\member.html", "HTML", 11, 0, 0, 0, 0, 11
+"d:\Desktop\LabWeb\LabWebProject\templates\researchField.html", "HTML", 9, 0, 0, 0, 0, 9
+"d:\Desktop\LabWeb\LabWebProject\templates\researchThesis.html", "HTML", 9, 0, 0, 0, 0, 9
+"d:\Desktop\LabWeb\LabWebProject\templates\researchWork.html", "HTML", 44, 0, 0, 0, 0, 44
+"Total", "-", 75, 19, 242, 0, 37, 373

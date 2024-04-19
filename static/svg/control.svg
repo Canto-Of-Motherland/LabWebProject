@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 674.47 455.22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #6d6d6d;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 31.25px;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="E428_Control_media_multimedia_player_stop" data-name="E428 Control media multimedia player stop">
+        <line class="cls-1" x1="74.09" y1="439.59" x2="74.09" y2="191.06"/>
+        <line class="cls-1" x1="74.09" y1="74.11" x2="74.09" y2="15.62"/>
+        <circle class="cls-1" cx="74.09" cy="132.58" r="58.47"/>
+        <line class="cls-1" x1="249.52" y1="439.59" x2="249.52" y2="376.66"/>
+        <line class="cls-1" x1="249.52" y1="259.7" x2="249.52" y2="15.62"/>
+        <circle class="cls-1" cx="249.52" cy="318.17" r="58.47"/>
+        <line class="cls-1" x1="424.95" y1="439.59" x2="424.95" y2="191.06"/>
+        <line class="cls-1" x1="424.95" y1="74.11" x2="424.95" y2="15.62"/>
+        <circle class="cls-1" cx="424.95" cy="132.58" r="58.47"/>
+        <line class="cls-1" x1="600.38" y1="439.59" x2="600.38" y2="305.34"/>
+        <line class="cls-1" x1="600.38" y1="188.39" x2="600.38" y2="15.62"/>
+        <circle class="cls-1" cx="600.38" cy="246.86" r="58.47"/>
+      </g>
+    </g>
+  </g>
+</svg>

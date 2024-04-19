@@ -1,0 +1,321 @@
+.swal-btn-confirm {
+    background-color: #090909 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+    padding: 7px 20px !important;
+}
+
+.swal-btn-confirm:active {
+    box-shadow: none !important;
+}
+
+.swal-title {
+    color: #090909 !important;
+    font-size: 28px !important;
+}
+
+.swal-btn-cancel {
+    background-color: transparent !important;
+    color: #090909 !important;
+    opacity: 0.5 !important;
+    margin-left: 120px !important;
+    padding: 0 !important;
+}
+
+.swal-btn-cancel:hover {
+    text-decoration: underline !important;
+    background-image: none !important;
+}
+
+.swal-btn-cancel:active {
+    box-shadow: none !important;
+}
+
+body {
+    margin: 0;
+    background-color: #ececec;
+}
+
+.block_background {
+    position: absolute;
+    width: calc(100% - 400px);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.cover_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0.7;
+}
+
+.background_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.block_main {
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+}
+
+.sign_title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% - 220px));
+    width: 100%;
+    height: 20px;
+}
+
+.title {
+    position: absolute;
+    width: 240px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #090909;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navigation {
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(calc(-50% - 144px));
+}
+
+.to_sign_password {
+    position: absolute;
+    left: 110px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6d6d6d;
+    letter-spacing: 1px;
+    outline: none;
+    padding-bottom: 4px;
+}
+
+.to_sign_password:hover {
+    border-bottom: #903612 3px solid;
+    color: #903612;
+    transition-duration: 100ms;
+}
+
+.to_sign_code {
+    position: absolute;
+    right: 110px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6d6d6d;
+    letter-spacing: 1px;
+    outline: none;
+    padding-bottom: 4px;
+}
+
+.to_sign_code:hover {
+    border-bottom: #903612 3px solid;
+    color: #903612;
+    transition-duration: 100ms;
+}
+
+.active {
+    border-bottom: #903612 3px solid;
+    color: #903612;
+}
+
+.window {
+    position: absolute;
+    width: 320px;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + -4px));
+    height: 310px;
+    border-radius: 8px;
+}
+
+.sign {
+    position: absolute;
+    width: 800px;
+    top: 88px;
+    transform: translateX(-40px)
+}
+
+.labels {
+    z-index: 2;
+    position: absolute;
+    font-size: 15px;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: #ffffff;
+    color: #919191;
+    left: 60px;
+    top: 12px;
+}
+
+.inputs {
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    height: 40px;
+    width: 300px;
+    border: #6f6f6f 2px solid;
+    left: 50%;
+    font-size: 15px;
+    padding-left: 10px;
+    transform: translateX(-50%);
+    border-radius: 6px;
+}
+
+.inputs:focus {
+    border: #903612 2px solid;
+    transition-duration: 200ms;
+    outline: none;
+}
+
+.infos {
+    z-index: 1;
+    position: absolute;
+    color: #903612;
+    font-size: 12px;
+    right: 46px;
+    top: 46px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.sign_password {
+    position: absolute;
+    width: 400px;
+}
+
+.email_1 {
+    position: absolute;
+    width: 100%;
+}
+
+.password {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+}
+
+.sign_code {
+    position: absolute;
+    width: 400px;
+    left: 400px;
+}
+
+.email_2 {
+    position: absolute;
+    width: 100%;
+}
+
+.occupy_input {
+    height: 42px;
+    width: 302px;
+}
+
+.input_email_2 {
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 6px;
+    border: none;
+    height: 40px;
+    width: 220px;
+    margin: 2px;
+    left: 50%;
+    font-size: 15px;
+    padding-left: 10px;
+    transform: translateX(calc(-50% - 42px));
+}
+
+.input_email_2:focus {
+    outline: none;
+}
+
+.btn_get_code {
+    z-index: 5;
+    position: absolute;
+    color: #6d6d6d;
+    border: none;
+    background-color: transparent;
+    width: 68px;
+    padding: 14px 0;
+    right: 55px;
+}
+
+.code {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+}
+
+.link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 54px));
+    width: 400px;
+}
+
+.clear {
+    position: absolute;
+    color: #6d6d6d;
+    left: 45px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.clear:hover {
+    text-decoration: underline;
+}
+
+.to_forget {
+    position: absolute;
+    color: #6d6d6d;
+    right: 45px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.to_forget:hover {
+    text-decoration: underline;
+}
+
+.btn_sign_in {
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    height: 35px;
+    border: none;
+    background-color: #903612;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + 110px));
+}
+
+.btn_sign_in:hover {
+    transform: translate(-50%, calc(-50% + 110px)) scale(1.05);
+    transition-duration: 100ms;
+}
+
+.btn_sign_in:active {
+    transform: translate(-50%, calc(-50% + 110px)) scale(1);
+    transition-duration: 100ms;
+}
+

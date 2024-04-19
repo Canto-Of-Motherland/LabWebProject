@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+.content_title {
+    position: relative;
+    font-size: 30px;
+    color: #090909;
+    letter-spacing: 1px;
+}
+
+.content_inner {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.content_subtitle {
+    position: relative;
+    left: 140px;
+    top: -23px;
+    font-size: 16px;
+    color: #9d9d9d;
+}
+
+.split_content {
+    position: relative;
+    top: -14px;
+    width: 100%;
+    height: 1px;
+    background-color: #c3c3c3;
+}
+
+.content_abstract {
+    position: relative;
+    color: #9d9d9d;
+    width: calc(100% - 40px);
+    left: 20px;
+    font-size: 14px;
+    line-height: 28px;
+    text-indent: 30px;
+    letter-spacing: 1px;
+}
+
+.work_list {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+.work_item {
+    position: relative;
+    display: flex;
+    left: 20px;
+    margin: 30px 0;
+    padding: 20px;
+    width: calc(100% - 80px);
+    height: 30vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #c3c3c3;
+    overflow: hidden;
+}
+
+.svg_background_left {
+    position: absolute;
+    width: 240px;
+    top: -10px;
+    left: -80px;
+    opacity: 0.2;
+    transform: rotate(35deg);
+}
+
+.svg_background_right_top {
+    position: absolute;
+    width: 200px;
+    top: -80px;
+    right: -70px;
+    opacity: 0.4;
+}
+
+.svg_background_right_bottom {
+    position: absolute;
+    width: 80px;
+    bottom: -20px;
+    right: 60px;
+    opacity: 0.6;
+}
+
+.block_img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 30%;
+    height: 100%;
+}
+
+.work_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.block_info {
+    position: relative;
+    left: 20px;
+    width: calc(70% - 20px);
+    height: 100%;
+}
+
+.work_title {
+    position: relative;
+    color: #090909;
+    text-decoration: none;
+    font-size: 2.4vw;
+    line-height: 3vw;
+    font-weight: 600;
+    letter-spacing: 0.2vw
+}
+
+.work_title:hover {
+    color: #903612;
+    transition-duration: 200ms;
+}
+
+.work_author {
+    position: relative;
+    color: #6d6d6d;
+    letter-spacing: 0.1vw;
+    line-height: 1.5vw;
+    font-size: 1.2vw;
+    padding: 1.2vw 0 4px 1.2vw;
+}
+
+.work_date {
+    position: relative;
+    color: #6d6d6d;
+    letter-spacing: 0.1vw;
+    line-height: 1.5vw;
+    font-size: 1.2vw;
+    padding: 4px 0 1.2vw 1.2vw;
+}
+
+.work_abstract {
+    position: relative;
+    text-indent: 2.6vw;
+    font-size: 1.4vw;
+    letter-spacing: 0.1vw;
+    line-height: 2.8vw;
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 8.4vw - 8px);
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-4vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(4vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        transform: translateY(4vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

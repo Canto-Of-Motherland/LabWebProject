@@ -1,0 +1,227 @@
+.swal-btn-confirm {
+    background-color: #090909 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+    padding: 7px 20px !important;
+}
+
+.swal-btn-confirm:active {
+    box-shadow: none !important;
+}
+
+.swal-btn-cancel {
+    background-color: transparent !important;
+    color: #090909 !important;
+    opacity: 0.5 !important;
+    margin-left: 120px !important;
+    padding: 0 !important;
+}
+
+.swal-btn-cancel:hover {
+    text-decoration: underline !important;
+    background-image: none !important;
+}
+
+.swal-btn-cancel:active {
+    box-shadow: none !important;
+}
+
+.swal-title {
+    color: #090909 !important;
+    font-size: 28px !important;
+}
+
+.to_admin_research_field {
+    background-color: #f7f7f7;
+    color: #903612;
+}
+
+.operate_panel_title {
+    position: absolute;
+    left: 3%;
+    top: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #090909;
+}
+
+.btn_save {
+    position: absolute;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.2vw;
+    background-color: #090909;
+    color: #ffffff;
+    font-weight: 600;
+    border: #090909 1px solid;
+    top: 20px;
+    right: 2%;
+    transition-duration: 200ms;
+}
+
+.btn_save:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
+}
+
+.btn_save:active {
+    transform: scale(1.0);
+    transition-duration: 200ms;
+}
+
+.split_content {
+    position: absolute;
+    top: 80px;
+    width: 98%;
+    height: 1px;
+    background-color: #090909;
+    opacity: 0.3;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.operate_panel {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 98%;
+}
+
+.textarea_content {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    color: #6d6d6d;
+    height: 360px;
+    width: calc(100% - 40px);
+    resize: none;
+    order: 2;
+    font-family: '微软雅黑';
+    padding: 5px;
+    line-height: 28px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: #6d6d6d 1px solid;
+}
+
+.textarea_content:focus {
+    outline: none;
+    color: #903612;
+    border: #903612 1px solid;
+    border-radius: 5px;
+}
+
+.tip_content {
+    position: relative;
+    font-size: 12px;
+    top: 20px;
+    padding-left: 20px;
+    color: #6d6d6d;
+}
+
+.block_photo_upload {
+    position: relative;
+    top: 30px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+.label_photo_upload {
+    position: relative;
+    text-wrap: nowrap;
+    line-height: 29px;
+}
+
+.block_photo {
+    position: relative;
+    height: 29px;
+    width: 600px;
+    margin-left: 1.3vw;
+}
+
+.file_photo {
+    position: absolute;
+    padding: 5px;
+    opacity: 0;
+    width: calc(4vw + 10px);
+    z-index: 1;
+}
+
+.occupy_photo_upload {
+    position: absolute;
+    left: 80px;
+    font-size: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6d6d6d;
+    text-wrap: nowrap;
+    max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.occupy_photo_upload:hover {
+    overflow: scroll;
+    text-overflow: clip;
+    transition-duration: 200ms;
+}
+
+.btn_upload {
+    z-index: 0;
+    position: absolute;
+    font-size: 1vw;
+    padding: 5px;
+    border-radius: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #090909;
+    color: #ffffff;
+    border: #090909 1px solid;
+}
+
+.btn_clear {
+    position: absolute;
+    left: 138px;
+    font-size: 1vw;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+    text-decoration: underline;
+    background-color: transparent;
+    color: #6d6d6d;
+    border: none;
+    text-wrap: nowrap;
+}
+
+.correct_alert {
+    position: absolute;
+    display: none;
+    width: 80px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+}
+
+.correct_alert_img {
+    position: absolute;
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.correct_alert_text {
+    position: absolute;
+    text-wrap: nowrap;
+    left: 38px;
+    font-size: 14px;
+    color: #919191;
+    top: 50%;
+    transform: translateY(-50%);
+}

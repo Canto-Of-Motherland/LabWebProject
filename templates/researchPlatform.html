@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>研究平台</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/researchPlatform.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/researchPlatform.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">研究平台</a>
+        </div>
+        <div class="content_inner">
+            <div class="content_title">研究平台</div>
+            <div class="content_subtitle">Research Platform</div>
+            <div class="split_content"></div>
+            <div class="platform_container">
+                <div class="platform_name">知融</div>
+                <div class="platform_intro">这里是关于知融的介绍</div>
+                <a class="platform_link platform_official" href="http://47.104.72.126:9103">→ 前往官网</a>
+                <a class="platform_link platform_document" href="">→ 查看文档</a>
+            </div>
+            <div class="platform_container">
+                <div class="platform_name">知意</div>
+                <div class="platform_intro">这里是关于知意的介绍</div>
+                <a class="platform_link platform_official" href="http://47.104.72.126:9104">→ 前往官网</a>
+                <a class="platform_link platform_document" href="">→ 查看文档</a>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

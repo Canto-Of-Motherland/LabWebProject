@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminNavigation.css' %}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="navigation_top">
+            <a class="to_main" href="{% url 'LabWebApp:main' %}">DASI 实验室</a>
+            <a class="to_admin" href="{% url 'LabWebApp:admin' %}">控制台</a>
+            <a class="user" href="{% url 'LabWebApp:userSelf' %}">
+                <div class="user_img"></div>
+                <script type="text/javascript">
+                    let photoPath = '/media/{{ user.photo }}';
+                    $('.user_img').css('background-image', "url('" + photoPath + "')");
+                </script>
+                <label class="user_name">{{ user.username }}</label>
+            </a>
+        </div>
+        <div class="navigation_left">
+            <img class="svg_control" src="{% static 'svg/control.svg' %}">
+            <div class="navigation_left_inner">
+                <a class="to_admin_change to_admin_news" href="{% url 'LabWebApp:adminNews' %}">新闻公告</a>
+                <a class="to_admin_change to_admin_slider" href="{% url 'LabWebApp:adminSlider' %}">轮播图</a>
+                <a class="to_admin_change to_admin_statistic" href="{% url 'LabWebApp:adminStatistic' %}">统计数据</a>
+                <a class="to_admin_change to_admin_user" href="{% url 'LabWebApp:adminUser' %}">实验室成员</a>
+                <a class="to_admin_change to_admin_research_field" href="{% url 'LabWebApp:adminResearchField' %}">研究方向</a>
+                <a class="to_admin_change to_admin_thesis" href="{% url 'LabWebApp:adminResearchThesis' %}">论文专利</a>
+                <a class="to_admin_change to_admin_work" href="{% url 'LabWebApp:adminResearchWork' %}">学术著作</a>
+                <a class="to_admin_change to_admin_message" href="{% url 'LabWebApp:adminMessage' %}">毕业寄语</a>
+                <a class="to_admin_change jto_admin_tips" href="{% url 'LabWebApp:main' %}">其他</a>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/self/404.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/self/404.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="svg">
+                <img class="svg_rose" src="{% static 'svg/rose.svg' %}">
+                <img class="svg_404" src="{% static 'svg/404.svg' %}">
+            </div>
+            <div class="info">
+                <label class="info_404"><span class="mark mark_left">“</span>{{ error_info }}<span class="mark mark_right">”</span></label>
+            </div>
+        </div>
+        <label class="contact">联系开发者：<a href="mailto:2562521178@qq.com?subject=问题反馈">2562521178@qq.com</a>　联系管理员：<a href="mailto:lzx2562521178@outlook.com?subject=问题反馈">lzx2562521178@outlook.com</a></label>
+        <div class="split_link"></div>
+        <div class="link">
+            <a href="{% url 'LabWebApp:main' %}">首页 |</a>
+            <a href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告 |</a>
+            <a href="{% url 'LabWebApp:researchField' %}">学术研究 |</a>
+            <a href="{% url 'LabWebApp:memberTeacherDetail' %}">实验室成员 |</a>
+            <a href="{% url 'LabWebApp:about' %}">关于我们 |</a>
+            <a href="{% url 'LabWebApp:main' %}">毕业寄语</a>
+        </div>
+    </body>
+</html>

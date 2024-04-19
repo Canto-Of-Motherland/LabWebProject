@@ -1,0 +1,40 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-研究方向</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminResearchField.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminResearchField.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">研究方向内容控制台</label>
+        <button type="button" class="btn_save" onclick="save()">保存内容</button>
+        <div class="split_content"></div>
+        <div class="operate_panel">
+            <textarea class="textarea_content" id="textarea_content" name="textarea_content">{{ data.research_field_content }}</textarea>
+            <div class="tip_content">*如需插入图片，请按照此格式输入：(示例图片.jpg)[示例图片的注释]</div>
+            <div class="block_photo_upload">
+                <div class="block_photo">
+                    <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" multiple="" onchange="setPath(this)">
+                    <div class="occupy_photo_upload"></div>
+                    <script type="text/javascript">
+                        let occupy = '{{ data.research_field_photo }}';
+                        if (occupy !== '') {
+                            $('.occupy_photo_upload').text(occupy);
+                        } else {
+                            $('.occupy_photo_upload').text('未选择');
+                        }
+                    </script>
+                    <button type="button" class="btn_upload">上传图片</button>
+                    <button type="button" class="btn_clear" onclick="clearPath()">清空已上传图片</button>
+                </div>
+            </div>
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已修改</label>
+        </div>
+    </div>
+{% endblock body %}

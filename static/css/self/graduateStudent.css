@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+
+.split_top {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 40px;
+    height: 1px;
+    background-color: #d6d6d6;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.student_title {
+    position: relative;
+    font-size: 28px;
+    width: 100%;
+    padding-bottom: 20px;
+    color: #090909;
+    text-align: center;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.content_inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    width: 80%;
+    left: 10%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.student_item {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.student_photo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #eee5db;
+    box-shadow: 0 0 10px rgba(9, 9, 9, 0.4);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translate(-50%, calc(-50% - 20px));
+    transition-duration: 200ms;
+}
+
+.student_photo:hover {
+    border: 3px solid #903612;
+    transition-duration: 200ms;
+}
+
+.student_grade {
+    position: absolute;
+    text-align: center;
+    bottom: -30px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #903612;
+    transition-duration: 200ms;
+}
+
+.student_photo:hover .student_grade {
+    bottom: 0;
+    transition-duration: 200ms;
+}
+
+.student_name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 14px;
+    color: #6d6d6d;
+    transform: translate(-50%, calc(-50% + 60px));
+}
+
+.student_photo:hover + .student_name {
+    color: #903612;
+    transition-duration: 200ms;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-4vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(4vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        transform: translateY(4vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

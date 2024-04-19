@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>毕业寄语</title>
+    <script type="text/javascript" src="{% static 'js/tool/masonry.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/graduateMessage.js' %}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/graduateMessage.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">毕业印象</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">毕业寄语</a>
+        </div>
+        <div class="split_top"></div>
+        <div class="message_title">毕业寄语</div>
+        <div class="content_inner">
+            <div class="content_grid"></div>
+        </div>
+        <button type="button" class="tip" onclick="continueLoad()">点击加载更多</button>
+    </div>
+{% endblock body %}

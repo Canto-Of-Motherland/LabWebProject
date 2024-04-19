@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>毕业生</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/graduateStudent.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">毕业印象</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">毕业生</a>
+        </div>
+        <div class="split_top"></div>
+        <div class="student_title">毕业生</div>
+        <div class="content_inner">
+            {% for item in data.student_data_list %}
+                <div class="student_item" onclick="window.location.href = './student/{{ item.student_id }}'">
+                    <div class="student_photo" style="background-image: url('/media/{{ item.student_photo }}');">
+                        <div class="student_grade">{{ item.student_grade }}</div>
+                    </div>
+                    <div class="student_name">{{ item.student_name }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

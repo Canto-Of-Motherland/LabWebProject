@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    {% csrf_token %}
+    <title>综合搜索</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/search.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">综合搜索：{{ data.search_keyword }}</a>
+        </div>
+        <div class="split_content"></div>
+        <div class="content_inner">
+            <div class="no_result">{{ data.no_result }}</div>
+            <div class="result_student">
+                {% for student in data.result_student %}
+                    <div class="result_student_item" onclick="window.location.href = './student/{{ student.student_id }}'">
+                        <div class="student_photo" style="background-image: url('/media/{{ student.student_photo }}')">
+                            <div class="student_grade">{{ student.student_grade }}</div>
+                        </div>
+                        <div class="student_name">{{ student.student_name }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="result_news">
+                {% for news in data.result_news %}
+                    <a class="result_news_item">
+                        <a class="news_category_and_title" href="{% url 'LabWebApp:newsDetail' news_url=news.news_id %}">[{{ news.news_category }}] {{ news.news_title }}</a>
+                        <div class="news_post_date">{{ news.news_post_date }}</div>
+                        <div class="split_news"></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}

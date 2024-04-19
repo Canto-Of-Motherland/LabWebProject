@@ -1,0 +1,111 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-毕业寄语</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker-zh-CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminMessage.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap-datetimepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminMessage.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">毕业寄语控制台</label>
+        <button type="button" class="btn_add" onclick="addMessage()">新增寄语</button>
+        <div class="split_message"></div>
+        <div class="operate_panel">
+            <div class="operate_panel_item operate_panel_item_add">
+                <label class="item_number">新增</label>
+                <div class="block_change">
+                    <div class="block_change_graduate">
+                        <label class="labels label_grade">　毕业生</label>
+                        <input type="text" class="inputs input_graduate" name="input_graduate" id="input_graduate" placeholder="请输入毕业生姓名">
+                    </div>
+                    <div class="block_change_grade">
+                        <label class="labels label_grade">年级学位</label>
+                        <input type="text" class="inputs input_grade" name="input_grade" id="input_grade" placeholder="请输入毕业生年级专业">
+                        <button type="button" class="btn_autofill" onclick="autoFillGrade(this)">自动填入</button>
+                    </div>
+                    <div class="block_change_link">
+                        <label class="labels label_link">学生主页</label>
+                        <input type="text" class="inputs input_link" name="input_link" id="input_link" placeholder="请输入毕业生主页链接">
+                        <button type="button" class="btn_autofill" onclick="autoFillLink(this)">自动填入</button>
+                    </div>
+                    <div class="block_change_message">
+                        <label class="labels label_message">毕业寄语</label>
+                        <textarea class="textareas textarea_message" name="textarea_message" id="textarea_message" placeholder="请输入毕业生寄语" maxlength="100"></textarea>
+                    </div>
+                    <div class="block_change_date">
+                        <label class="labels label_date">发表时间</label>
+                        <input type="text" class="inputs input_date" name="input_date" id="input_date" placeholder="请输入发表时间">
+                    </div>
+                </div>
+                <button type="button" class="btn_operate btn_operate_1" onclick="saveMessage(this)">保存</button>
+                <button type="button" class="btn_operate btn_operate_2" onclick="cancelMessage()">取消</button>
+                <div class="split_item"></div>
+            </div>
+            {% for item in data %}
+                <div class="operate_panel_item">
+                    <label class="item_number">{{ item.message_num }}</label>
+                    <div class="block_info">
+                        <div class="block_info_graduate">
+                            <label class="labels label_graduate">　毕业生</label>
+                            <label class="items item_graduate">{{ item.message_graduate }}</label>
+                        </div>
+                        <div class="block_info_grade">
+                            <label class="labels label_grade">年级学位</label>
+                            <label class="items item_grade">{{ item.message_grade }}</label>
+                        </div>
+                        <div class="block_info_link">
+                            <label class="labels label_link">学生主页</label>
+                            <label class="items item_link">{{ item.message_link }}</label>
+                        </div>
+                        <div class="block_info_message">
+                            <label class="labels label_message">毕业寄语</label>
+                            <label class="items item_message">{{ item.message_content }}</label>
+                        </div>
+                        <div class="block_info_date">
+                            <label class="labels label_date">发表时间</label>
+                            <label class="items item_date">{{ item.message_date }}</label>
+                        </div>
+                    </div>
+                    <div class="block_change">
+                        <div class="block_change_graduate">
+                            <label class="labels label_graduate">　毕业生</label>
+                            <input type="text" class="inputs input_graduate" name="input_graduate" id="input_graduate" placeholder="请输入毕业生姓名" value="{{ item.message_graduate }}">
+                        </div>
+                        <div class="block_change_grade">
+                            <label class="labels label_grade">年级学位</label>
+                            <input type="text" class="inputs input_grade" name="input_grade" id="input_grade" placeholder="请输入毕业生年级专业" value="{{ item.message_grade }}">
+                            <button type="button" class="btn_autofill" onclick="autoFillGrade(this)">自动填入</button>
+                        </div>
+                        <div class="block_change_link">
+                            <label class="labels label_link">学生主页</label>
+                            <input type="text" class="inputs input_link" name="input_link" id="input_link" placeholder="请输入毕业生主页链接" value="{{ item.message_link }}">
+                            <button type="button" class="btn_autofill" onclick="autoFillLink(this)">自动填入</button>
+                        </div>
+                        <div class="block_change_message">
+                            <label class="labels label_message">毕业寄语</label>
+                            <textarea class="textareas textarea_message" name="textarea_message" id="textarea_message" placeholder="请输入毕业生寄语" maxlength="100">{{ item.message_content }}</textarea>
+                        </div>
+                        <div class="block_change_date">
+                            <label class="labels label_date">发表时间</label>
+                            <input type="text" class="inputs input_date" name="input_date" id="input_date" placeholder="请输入发表时间" value="{{ item.message_date }}">
+                        </div>
+                    </div>
+                    <button type="button" class="btn_operate btn_operate_1" id="{{ item.message_id }}" onclick="editAndSaveMessage(this)">编辑</button>
+                    <button type="button" class="btn_operate btn_operate_2" id="{{ item.message_id }}" onclick="deleteAndCancelMessage(this)">删除</button>
+                    <div class="split_item"></div>  
+                </div>
+            {% endfor %}
+       </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已修改</label>
+        </div>
+    </div>
+{% endblock body %}

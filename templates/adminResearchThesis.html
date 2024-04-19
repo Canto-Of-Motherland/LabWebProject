@@ -1,0 +1,60 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-论文专利</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker-zh-CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminResearchThesis.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap-datetimepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminResearchThesis.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">论文专利控制台</label>
+        <button type="button" class="btn_add" onclick="addThesis()">新增条目</button>
+        <div class="split_thesis"></div>
+        <div class="operate_panel">
+            {% for item in data %}
+                <div class="operate_panel_item">
+                    <label class="item_number">{{ item.thesis_number }} |</label>
+                    <a class="to_thesis" href="{{ item.thesis_link }}" id="{{ item.thesis_id }}">{{ item.thesis_title }}</a>
+                    <label class="item_date">发布时间：{{ item.thesis_date }}</label>
+                    <label class="item_author" style="display: none;">{{ item.thesis_author }}</label>
+                    <button type="button" class="btn_edit" onclick="editThesis(this)">编辑</button>
+                    <button type="button" class="btn_delete" onclick="deleteThesis(this)">删除</button>
+                    <div class="split_item"></div>    
+                </div>
+            {% endfor %}
+        </div>
+        <div class="edit_panel" id="">
+            <div class="block_title">
+                <div class="labels label_title">论文/专利标题：</div>
+                <input type="text" class="inputs input_title" placeholder="请输入论文或专利标题" value="">    
+            </div>
+            <div class="block_author">
+                <div class="labels label_author">论文作者/专利所有人：</div>
+                <input type="text" class="inputs input_author" placeholder="请输入论文作者或专利所有人" value="">    
+            </div>
+            <div class="block_date">
+                <div class="labels label_date">发布时间：</div>
+                <input type="text" class="inputs input_date" placeholder="请选择发表时间" value="">    
+            </div>
+            <div class="block_link">
+                <div class="labels label_link">论文或专利链接：</div>
+                <input type="text" class="inputs input_link" placeholder="请输入论文或专利链接" value="">    
+            </div>
+            <div class="block_confirm">
+                <button type="button" class="btn_cancel" onclick="cancelThesis()">取消</button>
+                <button type="button" class="btn_save" onclick="saveThesis()">保存</button>
+            </div>
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text"></label>
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,114 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-轮播图</title>
+    <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'js/self/adminSlider.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminSlider.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <div class="operate_panel_title_1" onclick="switchToSlider1(this)">首页索引轮播图</div>
+        <div class="split_slider_1"></div>
+        <div class="operate_panel_1">
+            {% for item in data.slider_1 %}
+                <div class="operate_panel_1_item">
+                    <label class="item_number">{{ item.slider_num }}</label>
+                    <div class="block_info">
+                        <div class="block_info_title">
+                            <label class="labels label_title">标题</label>
+                            <label class="items item_title">{{ item.slider_title }}</label>
+                        </div>
+                        <div class="block_info_abstract">
+                            <label class="labels label_abstract">摘要</label>
+                            <label class="items item_abstract">{{ item.slider_abstract }}</label>
+                        </div>
+                        <div class="block_info_url">
+                            <label class="labels label_url">链接</label>
+                            <label class="items item_url">{{ item.slider_url }}</label>
+                        </div>
+                        <div class="block_info_photo">
+                            <label class="labels label_photo">图片</label>
+                            <img class="item_photo" src="/media/{{ item.slider_photo }}">
+                        </div>
+                    </div>
+                    <div class="block_change">
+                        <div class="block_change_title">
+                            <label class="labels label_title">标题</label>
+                            <input type="text" class="inputs input_title" name="input_title" id="input_title" placeholder="请输入标题" value="{{ item.slider_title }}" maxlength="32">
+                        </div>
+                        <div class="block_change_abstract">
+                            <label class="labels label_abstract">摘要</label>
+                            <textarea type="text" class="textarea_abstract" name="textarea_abstract" id="textarea_abstract" placeholder="请输入摘要" maxlength="128">{{ item.slider_abstract }}</textarea>
+                        </div>
+                        <div class="block_change_url">
+                            <label class="labels label_url">链接</label>
+                            <input type="text" class="inputs input_url" name="input_url" id="input_url" placeholder="请输入链接" value="{{ item.slider_url }}" maxlength="128">
+                        </div>
+                        <div class="block_change_photo">
+                            <label class="labels label_photo">图片</label>
+                            <div class="change_photo">
+                                <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" multiple="" onchange="setPath(this)">
+                                <div class="occupy_photo_upload">{{ item.slider_photo }}</div>
+                                <button type="button" class="btn_upload">上传图片</button>
+                                <button type="button" class="btn_clear" onclick="clearPath()">清空已上传图片</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_operate" onclick="editAndSaveSlider1(this)">编辑</button>
+                    <div class="split_item"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="split_title">/</div>
+        <div class="operate_panel_title_2" onclick="switchToSlider2(this)">成果轮播图</div>
+        <div class="operate_panel_2">
+            {% for item in data.slider_2 %}
+                <div class="operate_panel_2_item">
+                    <label class="item_number">{{ item.slider_num }}</label>
+                    <div class="block_info">
+                        <div class="block_info_title">
+                            <label class="labels label_title">标题</label>
+                            <label class="items item_title">{{ item.slider_title }}</label>
+                        </div>
+                        <div class="block_info_url special">
+                            <label class="labels label_url">链接</label>
+                            <label class="items item_url">{{ item.slider_url }}</label>
+                        </div>
+                        <div class="block_info_photo special">
+                            <label class="labels label_photo">图片</label>
+                            <img class="item_photo" src="/media/{{ item.slider_photo }}">
+                        </div>
+                    </div>
+                    <div class="block_change">
+                        <div class="block_change_title">
+                            <label class="labels label_title">标题</label>
+                            <input type="text" class="inputs input_title" name="input_title" id="input_title" placeholder="请输入标题" value="{{ item.slider_title }}" maxlength="16">
+                        </div>
+                        <div class="block_change_url special">
+                            <label class="labels label_url">链接</label>
+                            <input type="text" class="inputs input_url" name="input_url" id="input_url" placeholder="请输入链接" value="{{ item.slider_url }}" maxlength="128">
+                        </div>
+                        <div class="block_change_photo special">
+                            <label class="labels label_photo">图片</label>
+                            <div class="change_photo">
+                                <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" multiple="" onchange="setPath(this)">
+                                <div class="occupy_photo_upload">{{ item.slider_photo }}</div>
+                                <button type="button" class="btn_upload">上传图片</button>
+                                <button type="button" class="btn_clear" onclick="clearPath()">清空已上传图片</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_operate" onclick="editAndSaveSlider2(this)">编辑</button>
+                    <div class="split_item"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已修改</label>
+        </div>
+    </div>
+{% endblock body %}

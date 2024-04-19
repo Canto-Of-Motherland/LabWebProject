@@ -1,0 +1,62 @@
+Date : 2023-12-02 12:39:48
+Directory : d:\Desktop\LabWeb\LabWebProject
+Total : 23 files,  2666 codes, 20 comments, 183 blanks, all 2869 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |          6 |      1,621 |         12 |         99 |      1,732 |
+| JavaScript |          7 |        530 |          5 |         38 |        573 |
+| Python     |          7 |        342 |          3 |         46 |        391 |
+| HTML       |          3 |        173 |          0 |          0 |        173 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         23 |      2,666 |         20 |        183 |      2,869 |
+| LabWebApp                                                                                    |          6 |        346 |          3 |         46 |        395 |
+| LabWebApp (Files)                                                                            |          3 |        311 |          0 |         28 |        339 |
+| LabWebApp\migrations                                                                         |          3 |         35 |          3 |         18 |         56 |
+| LabWebProject                                                                                |          1 |         -4 |          0 |          0 |         -4 |
+| static                                                                                       |         13 |      2,151 |         17 |        137 |      2,305 |
+| static\css                                                                                   |          6 |      1,621 |         12 |         99 |      1,732 |
+| static\css\self                                                                              |          4 |        648 |          0 |         97 |        745 |
+| static\css\tool                                                                              |          2 |        973 |         12 |          2 |        987 |
+| static\js                                                                                    |          7 |        530 |          5 |         38 |        573 |
+| static\js\self                                                                               |          5 |        527 |          0 |         37 |        564 |
+| static\js\tool                                                                               |          2 |          3 |          5 |          1 |          9 |
+| templates                                                                                    |          3 |        173 |          0 |          0 |        173 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                     | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0003_remove_students_student_address.py | Python     |         11 |          1 |          6 |         18 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0004_rename_students_student.py         | Python     |         11 |          1 |          6 |         18 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0005_student_student_show.py            | Python     |         13 |          1 |          6 |         20 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\urls.py                                            | Python     |          2 |          0 |          0 |          2 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\util.py                                            | Python     |         35 |          0 |         12 |         47 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\views.py                                           | Python     |        274 |          0 |         16 |        290 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\urls.py                                        | Python     |         -4 |          0 |          0 |         -4 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\404.css                                      | CSS        |         21 |          0 |          3 |         24 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminNewsDetail.css                          | CSS        |          0 |          0 |         -6 |         -6 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminUserDetail.css                          | CSS        |        349 |          0 |         56 |        405 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\signIn.css                                   | CSS        |        278 |          0 |         44 |        322 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\tool\bootstrap-datepicker-standalone.css          | CSS        |        503 |          6 |          1 |        510 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\tool\bootstrap-datepicker.css                     | CSS        |        470 |          6 |          1 |        477 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\404.js                                        | JavaScript |         14 |          0 |          0 |         14 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminNews.js                                  | JavaScript |        -29 |          0 |          0 |        -29 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminNewsDetail.js                            | JavaScript |         -9 |          0 |         -2 |        -11 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminUserDetail.js                            | JavaScript |        185 |          0 |          9 |        194 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\signIn.js                                     | JavaScript |        366 |          0 |         30 |        396 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\bootstrap-datepicker-zh-CN.js                 | JavaScript |          1 |          0 |          0 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\bootstrap-datepicker.js                       | JavaScript |          2 |          5 |          1 |          8 |
+| d:\Desktop\LabWeb\LabWebProject\templates\404.html                                           | HTML       |          3 |          0 |          0 |          3 |
+| d:\Desktop\LabWeb\LabWebProject\templates\adminUserDetail.html                               | HTML       |        107 |          0 |          0 |        107 |
+| d:\Desktop\LabWeb\LabWebProject\templates\signIn.html                                        | HTML       |         63 |          0 |          0 |         63 |
+| Total                                                                                        |            |      2,666 |         20 |        183 |      2,869 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

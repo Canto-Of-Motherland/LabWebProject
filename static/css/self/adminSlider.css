@@ -1,0 +1,361 @@
+.to_admin_slider {
+    background-color: #f7f7f7;
+    color: #903612;
+}
+
+.operate_panel_title_1 {
+    position: absolute;
+    left: 3%;
+    top: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #090909;
+}
+
+.split_slider_1 {
+    position: absolute;
+    top: 80px;
+    width: 98%;
+    height: 1px;
+    background-color: #090909;
+    opacity: 0.3;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.operate_panel_1 {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 98%;
+}
+
+.operate_panel_1_item {
+    position: relative;
+    display: block;
+    height: 250px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.item_number {
+    position: absolute;
+    color: #090909;
+    font-size: 14px;
+    opacity: 0.5;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.block_info {
+    position: absolute;
+    width: calc(100% - 130px);
+    left: 50px;
+}
+
+.labels {
+    position: absolute;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #090909;
+    opacity: 0.5;
+}
+
+.items {
+    position: absolute;
+    font-size: 14px;
+    line-height: 30px;
+    color: #6d6d6d;
+    left: 50px;
+}
+
+.block_info_title {
+    position: absolute;
+    width: calc(100% - 50px);
+}
+
+.item_title {
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+.block_info_abstract {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 35px;
+}
+
+.item_abstract {
+    width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.block_info_url {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 100px;
+}
+
+.item_url {
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+.block_info_photo {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 135px;
+}
+
+.item_photo {
+    position: absolute;
+    height: 100px;
+    left: 50px;
+    top: 8px;
+}
+
+.block_change {
+    position: absolute;
+    width: calc(100% - 130px);
+    left: 50px;
+    display: none;
+}
+
+.inputs {
+    position: absolute;
+    padding: 7px 10px 5px 0;
+    left: 50px;
+    font-size: 14px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    color: #6d6d6d;
+    background-color: transparent;
+    border-bottom: #6d6d6d 1px solid;
+}
+
+.inputs:focus {
+    outline: none;
+    border-bottom: #903612 1px solid;
+    color: #903612;
+    transition-duration: 100ms;
+}
+
+.block_change_title {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 10px;
+}
+
+.input_title {
+    width: 40%;
+}
+
+.block_change_abstract {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 60px;
+}
+
+.textarea_abstract {
+    position: absolute;
+    left: 50px;
+    font-family: '微软雅黑';
+    padding: 0 5px;
+    font-size: 14px;
+    width: 98%;
+    height: 60px;
+    color: #6d6d6d;
+    background-color: transparent;
+    line-height: 30px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.textarea_abstract:focus {
+    outline: none;
+    color: #903612;
+    border: #903612 1px solid;
+    border-radius: 5px;
+}
+
+.block_change_url {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 130px;
+}
+
+.input_url {
+    width: 80%;
+}
+
+.block_change_photo {
+    position: absolute;
+    width: calc(100% - 50px);
+    top: 180px;
+}
+
+.change_photo {
+    position: absolute;
+    width: calc(100% - 50px);
+    left: 50px;
+    height: 30px;
+}
+
+.file_photo {
+    position: absolute;
+    opacity: 0;
+    width: 67px;
+    height: 30px;
+    z-index: 1;
+}
+
+.occupy_photo_upload {
+    position: absolute;
+    left: 80px;
+    font-size: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6d6d6d;
+    text-wrap: nowrap;
+    max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.occupy_photo_upload:hover {
+    overflow: scroll;
+    text-overflow: clip;
+    transition-duration: 200ms;
+}
+
+.btn_upload {
+    z-index: 0;
+    position: absolute;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #090909;
+    color: #ffffff;
+    border: #090909 1px solid;
+}
+
+.btn_clear {
+    position: absolute;
+    top: 38px;
+    font-size: 14px;
+    padding: 0;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #6d6d6d;
+    border: none;
+    text-wrap: nowrap;
+}
+
+.btn_operate {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #4187ff;
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+}
+
+.btn_operate:hover {
+    text-decoration: underline;
+}
+
+.split_item {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #090909;
+    opacity: 0.1;
+}
+
+.split_title {
+    position: absolute;
+    left: calc(3% + 130px);
+    top: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #6d6d6d;
+}
+
+.operate_panel_title_2 {
+    position: absolute;
+    left: calc(3% + 150px);
+    top: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #6d6d6d;
+}
+
+.operate_panel_2 {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 80px;
+    transform: translateX(52%);
+    width: 98%;
+}
+
+.operate_panel_2_item {
+    position: relative;
+    display: block;
+    height: 185px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.special {
+    transform: translateY(-65px);
+}
+
+.correct_alert {
+    position: absolute;
+    display: none;
+    width: 80px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+}
+
+.correct_alert_img {
+    position: absolute;
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.correct_alert_text {
+    position: absolute;
+    text-wrap: nowrap;
+    left: 38px;
+    font-size: 14px;
+    color: #919191;
+    top: 50%;
+    transform: translateY(-50%);
+}

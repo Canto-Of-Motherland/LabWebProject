@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+
+.news_list {
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+
+.split_item_top {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    height: 1px;
+    background-color: #d6d6d6;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.news_list_title {
+    position: relative;
+    font-size: 28px;
+    width: 100%;
+    padding-bottom: 20px;
+    color: #090909;
+    text-align: center;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.news_item_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 100%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.news_item {
+    position: relative;
+    height: 130px;
+    margin: 16px;
+    padding: 10px;
+    border-top: 5px solid #903612;
+    background-color: #ffffff;
+    display: block;
+    background-image: linear-gradient(to right, #903612, #903612);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.news_item:hover {
+    background-size: 100% 100%;
+    transition-duration: 300ms;
+}
+
+.news_month_date {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-right: 2px solid #903612;
+    transition-duration: 300ms;
+}
+
+.news_item:hover .news_month_date {
+    transition-duration: 300ms;
+    border-right: 2px solid #ffffff;
+}
+
+.news_month {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #090909;
+    transition-duration: 300ms;
+}
+
+.news_item:hover .news_month {
+    transition-duration: 300ms;
+    color: #ffffff;
+}
+
+.news_date {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: #903612;
+    transition-duration: 300ms;
+}
+
+.news_item:hover .news_date {
+    transition-duration: 300ms;
+    color: #ffffff;
+}
+
+.svg_building_news {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 92px;
+    opacity: 0;
+    transform: translateX(100vw);
+    filter: drop-shadow(#ffffff -100vw 0);
+}
+
+.news_item:hover .svg_building_news {
+    opacity: 0.8;
+    transition-duration: 300ms;
+}
+
+.news_title {
+    position: relative;
+    left: 130px;
+    width: calc(100% - 140px);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #090909;
+    letter-spacing: 1px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition-duration: 300ms;
+}
+
+.news_item:hover .news_title {
+    transition-duration: 300ms;
+    color: #ffffff;
+}
+
+.news_abstract {
+    position: relative;
+    left: 140px;
+    padding-top: 10px;
+    width: calc(100% - 170px);
+    font-size: 12px;
+    line-height: 20px;
+    color: #6d6d6d;
+    letter-spacing: 1px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition-duration: 300ms;
+}
+
+.news_item:hover .news_abstract {
+    transition-duration: 300ms;
+    color: #eee5db;
+}
+
+.navigation_page {
+    position: relative;
+    height: 14px;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navigation_page_container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.svg_to_before {
+    position: relative;
+    top: 2px;
+    height: 14px;
+    padding-right: 10px;
+}
+
+.label_page {
+    position: relative;
+    font-size: 14px;
+    line-height: 14px;
+    color: #6d6d6d;
+}
+
+.input_page_number {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #6d6d6d;
+    background-color: transparent;
+    width: 20px;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid #6d6d6d;
+}
+
+.input_page_number:focus {
+    outline: none;
+    border-bottom: 1px solid #903612;
+    color: #903612;
+}
+
+.btn_page {
+    position: relative;
+    font-size: 14px;
+    color: #6d6d6d;
+    border: none;
+    padding: 0;
+    padding-left: 10px;
+    background: none;
+}
+
+.btn_page:hover {
+    text-decoration: underline;
+}
+
+.svg_to_after {
+    position: relative;
+    top: 2px;
+    height: 14px;
+    padding-left: 10px;
+}
+
+
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-4vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(4vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        transform: translateY(4vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

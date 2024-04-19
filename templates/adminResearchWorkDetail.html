@@ -1,0 +1,71 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>学术著作控制台-{{ data.work_title }}</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker-zh-CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminResearchWorkDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap-datetimepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminResearchWorkDetail.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <div class="operate_panel">
+            <a class="to_back" href="{% url 'LabWebApp:adminResearchWork' %}">&lt; 返回著作列表</a>
+            <div class="operate_panel_content">
+                <div class="block_title">
+                    <label class="labels label_title">著作标题</label>
+                    <input type="text" class="inputs input_title" name="input_title" id="input_title" placeholder="请输入标题">
+                    <script type="text/javascript">
+                        let title = '{{ data.work_title }}';
+                        if (title !== '新增著作') {
+                            $('.input_title').val('{{ data.work_title }}');
+                        }
+                    </script>
+                </div>
+                <div class="block_author">
+                    <label class="labels label_author">著作作者</label>
+                    <input type="text" class="inputs input_author" name="input_author" id="input_author" placeholder="请输入作者" value="{{ data.work_author }}">
+                </div>
+                <div class="block_abstract">
+                    <label class="labels label_abstract">著作摘要</label>
+                    <textarea class="textarea_abstract" name="textarea_abstract" id="textarea_abstract" placeholder="请输入摘要">{{ data.work_abstract }}</textarea>
+                </div>
+                <div class="block_date">
+                    <label class="labels label_date">出版日期</label>
+                    <input type="text" class="inputs input_date" name="input_date" id="input_date" value="{{ data.work_date }}">
+                </div>
+                <div class="block_link">
+                    <label class="labels label_link">著作链接</label>
+                    <input type="text" class="inputs input_link" name="input_link" id="input_link" value="{{ data.work_link }}">
+                </div>
+                <div class="block_photo_upload">
+                    <label class="labels label_photo_upload">上传书图</label>
+                    <div class="block_photo">
+                        <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" onchange="setPath(this)">
+                        <div class="occupy_photo_upload"></div>
+                        <script type="text/javascript">
+                            let occupy = '{{ data.work_photo }}';
+                            if (occupy !== '') {
+                                $('.occupy_photo_upload').text(occupy);
+                            } else {
+                                $('.occupy_photo_upload').text('未选择');
+                            }
+                        </script>
+                        <button type="button" class="btn_upload">上传图片</button>
+                        <button type="button" class="btn_clear" onclick="clearPath()">删除已上传图片</button>
+                    </div>
+                </div>
+                <div class="block_confirm">
+                    <label class="label_tip"></label>
+                    <button type="button" class="btn_submit" onclick="submit()">保　存</button>
+                    <button type="button" class="btn_cancel" onclick="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

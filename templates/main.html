@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>DASI 实验室</title>
+    <script defer type="text/javascript" src="{% static 'js/self/slider.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'js/self/main.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/main.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="slider">
+        <div class="img_group">
+            {% for slider_item in data.slider_main %}
+                <a href="{{ slider_item.slider_url }}">
+                    <div class="slider_img" style="background-image: url('/media/{{ slider_item.slider_photo }}');"></div>
+                    <div class="info_slider">
+                        <div class="info_slider_occupy"></div>
+                        <h1 class="title_slider">{{ slider_item.slider_title }}</h1>
+                        <div class="split_slider"></div>
+                        <label class="abstract_slider">{{ slider_item.slider_abstract }}</label>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="btn_change">
+            <img class="btn_change_left" src="{% static 'svg/btn_left.svg' %}">
+            <img class="btn_change_right" src="{% static 'svg/btn_right.svg' %}">
+        </div>
+        <div class="number">
+            <a>1</a>
+            <a>2</a>
+            <a>3</a>
+            <a>4</a>
+            <a>5</a>
+        </div>
+        <img class="btn_to_content" src="{% static 'svg/btn_top.svg' %}">
+    </div>
+    <div class="content">
+        <div class="news_container">
+            <div class="news_block">
+                <div class="news_block_title">
+                    <img class="news_block_title_img" src="{% static 'svg/news.svg' %}">
+                    <h1 class="news_block_title_text">知新</h1>
+                </div>
+                <div class="split_news"></div>
+                <div class="news_block_inner">
+                    <a class="news_photo_block" href="{% url 'LabWebApp:newsDetail' news_url=data.news_left.news_id %}">
+                        <div class="news_photo" style="background-image: url('/media/{{ data.news_left.news_photo }}');"></div>
+                        <div class="news_photo_cover"></div>
+                        <label class="news_photo_title">{{ data.news_left.news_title }}</label>
+                    </a>
+                    <div class="news_group">
+                        {% for news in data.news_right %}
+                            <a class="news_title" href="{% url 'LabWebApp:newsDetail' news_url=news.news_id %}">
+                                <label class="news_title_text">{{ news.news_title }}</label>
+                                <img class="news_svg" src="{% static 'svg/news.svg' %}">
+                                <label class="news_date">{{ news.news_post_datetime }}</label>
+                                <img class="blossom_svg" src="{% static 'svg/blossom_reverse.svg' %}">
+                            </a>
+                        {% endfor %}
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div class="data_container">
+            <div class="data_block">
+                <div class="data_block_title">
+                    <img class="data_block_title_img" src="{% static 'svg/data.svg' %}">
+                    <h1 class="data_block_title_text">行路</h1>
+                </div>
+                <div class="split_data_top"></div>
+                <div class="data_block_content">
+                    <div class=" data_block_content_info">
+                        <h1 class="data_block_content_number" id="number_1">0</h1>
+                        <label class="data_block_content_text"><span style="font-weight: 600; font-size: 2vw;">载</span><br>科研积淀</label>
+                    </div>
+                    <div class="data_block_content_info">
+                        <h1 class="data_block_content_number" id="number_2">0</h1>
+                        <label class="data_block_content_text"><span style="font-weight: 600; font-size: 2vw;">项</span><br>学术成果</label>
+                    </div>
+                    <div class="data_block_content_info">
+                        <h1 class="data_block_content_number" id="number_3">0</h1>
+                        <label class="data_block_content_text"><span style="font-weight: 600; font-size: 2vw;">名</span><br>人才输出</label>
+                    </div>
+                    <div class="data_block_content_info">
+                        <h1 class="data_block_content_number" id="number_4">0</h1>
+                        <label class="data_block_content_text"><span style="font-weight: 600; font-size: 2vw;">人</span><br>科研团队</label>
+                    </div>
+                    <div class="data_block_content_info">
+                        <h1 class="data_block_content_number" id="number_5">0</h1>
+                        <label class="data_block_content_text"><span style="font-weight: 600; font-size: 2vw;">项</span><br>重大项目</label>
+                    </div>
+                    <script type="text/javascript">
+                        let value1 = parseInt('{{ data.statistic.statistic_year }}') + 1;
+                        let value2 = parseInt('{{ data.statistic.statistic_achievement }}') + 1;
+                        let value3 = parseInt('{{ data.statistic.statistic_graduate }}') + 1;
+                        let value4 = parseInt('{{ data.statistic.statistic_team }}') + 1;
+                        let value5 = parseInt('{{ data.statistic.statistic_project }}') + 1;
+                    </script>
+                </div>
+                <div class="split_data_bottom"></div>
+            </div>
+            <img class="background_building" src="{% static 'svg/building.svg' %}">
+            <div class="slogan">
+                <h1 class="slogan_text">在一起　就可以</h1>
+            </div>
+        </div>
+        <div class="achievement_container">
+            <div class="achievement_block">
+                <div class="achievement_block_title">
+                    <img class="achievement_block_title_img" src="{% static 'svg/achievement.svg' %}">
+                    <h1 class="achievement_block_title_text">问界</h1>
+                </div>
+                <div class="split_achievement_top"></div>
+                <div class="achievement_block_content">
+                    <div class="achievement_block_content_in">
+                        {% for slider in data.slider_content %}
+                            <a class="achievement_block_content_item" href="{{ slider.slider_url }}">
+                                <div class="achievement_photo" style="background-image: url('/media/{{ slider.slider_photo }}');"></div>
+                                <div class="achievement_photo_cover"></div>
+                                <label class="achievement_text">{{ slider.slider_title }}</label>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="split_achievement_bottom"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

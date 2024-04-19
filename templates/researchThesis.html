@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>论文专利</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/researchThesis.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">论文专利</a>
+        </div>
+        <div class="content_inner">
+            <div class="content_title">论文专利</div>
+            <div class="content_subtitle">Thesis & Patent</div>
+            <div class="split_content"></div>
+            <div class="content_abstract">实验室师生在xxxx，xxxx等领域的xxxx、xxxx、xxxx、xxxx、xxxx等刊物发表有多篇论文，并申有多个专利</div>
+        </div>
+        <div class="thesis_list">
+            {% for item in data %}
+            <div class="thesis_item">
+                <div class="thesis_item_content thesis_item_number">{{ item.thesis_number }}</div>
+                <a class="thesis_item_content thesis_item_title" href="{{ item.thesis_link }}">{{ item.thesis_author }}，{{ item.thesis_title }}</a>
+                <div class="thesis_item_content thesis_item_date">{{ item.thesis_date }}</div>
+                <div class="split_thesis"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>学术著作</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/researchWork.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">学术著作</a>
+        </div>
+        <div class="content_inner">
+            <div class="content_title">学术著作</div>
+            <div class="content_subtitle">Literature & Books</div>
+            <div class="split_content"></div>
+            <div class="content_abstract">实验室洪亮教授著有多部著作</div>
+        </div>
+        <div class="work_list">
+            {% for item in data %}
+                <div class="work_item">
+                    <img class="svg_background_left" src="{% static 'svg/blossom.svg' %}">
+                    <img class="svg_background_right_top" src="{% static 'svg/blossom.svg' %}">
+                    <img class="svg_background_right_bottom" src="{% static 'svg/blossom.svg' %}">
+                    <div class="block_img">
+                        <img class="work_img" src="/media/{{ item.work_photo }}">
+                    </div>
+                    <div class="block_info">
+                        <a class="work_title" href="{{ item.work_link }}">{{ item.work_title }}</a>
+                        <div class="work_author">著　　者：{{ item.work_author }}</div>
+                        <div class="work_date">出版时间：{{ item.work_date }}</div>
+                        <div class="work_abstract">{{ item.work_abstract }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

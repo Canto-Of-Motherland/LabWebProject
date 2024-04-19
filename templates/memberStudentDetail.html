@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>学生信息-{{ data.student_name }}</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/memberStudentDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/memberStudentDetail.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">实验室成员</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:'|add:data.student_category_link %}">{{ data.student_category }}</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">{{ data.student_name }}</a>
+        </div>
+        <div class="split_top"></div>
+        <div class="content_inner">
+            <div class="content_title">{{ data.student_name }}</div>
+            <div class="content_subtitle">{{ data.student_grade }}</div>
+            <div class="split_content"></div>
+            <div class="content_main">
+                <div class="content_main_left">
+                    <div class="content_main_left_inner">
+                        <div class="title_info" id="0" onclick="changeInfoBlock(this)">
+                            <div class="title_dot"></div>
+                            <div class="title_text">个人简介</div>
+                            <div class="title_connect"></div>
+                        </div>
+                        <div class="connect"></div>
+                        <div class="title_info" id="1" onclick="changeInfoBlock(this)">
+                            <div class="title_dot"></div>
+                            <div class="title_text">基本信息</div>
+                            <div class="title_connect"></div>
+                        </div>
+                        <div class="connect"></div>
+                        <div class="title_info" id="2" onclick="changeInfoBlock(this)">
+                            <div class="title_dot"></div>
+                            <div class="title_text">个人矩阵</div>
+                            <div class="title_connect"></div>
+                        </div>
+                        <div class="connect"></div>
+                        <div class="title_info" id="3" onclick="changeInfoBlock(this)">
+                            <div class="title_dot"></div>
+                            <div class="title_text">个人成就</div>
+                            <div class="title_connect"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_main_right">
+                    <div class="content_main_right_inner">
+                        <div class="content_main_right_item">
+                            <img class="svg_background_left" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_top" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_bottom" src="{% static 'svg/'|add:data.student_background %}">
+                            <div class="item_container">
+                                <div class="student_photo" style="background-image: url('/media/{{ data.student_photo }}');"></div>
+                                <div class="student_name_1">{{ data.student_name }}</div>
+                                <div class="student_grade_1">{{ data.student_grade }}</div>
+                                <div class="split_grade"></div>
+                                <div class="student_self_introduction">{{ data.student_self_introduction }}</div>
+                            </div>
+                        </div>
+                        <div class="content_main_right_item">
+                            <img class="svg_background_left" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_top" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_bottom" src="{% static 'svg/'|add:data.student_background %}">
+                            <div class="item_container">
+                                <div class="student_photo" style="background-image: url('/media/{{ data.student_photo }}');"></div>
+                                <div class="student_info_block_1">
+                                    <div class="student_info_1 student_name_2"><span>姓名 |</span> {{ data.student_name }}</div>
+                                    <div class="student_info_1 student_gender"><span>性别 |</span> {{ data.student_gender }}</div>
+                                    <div class="student_info_1 student_grade_2"><span>年级 |</span> {{ data.student_grade }}</div>
+                                    <div class="student_info_1 student_major"><span>专业 |</span> {{ data.student_major }}</div>
+                                    <div class="student_info_1 student_email"><span>邮箱 |</span> <a href="mailto:{{ data.student_email }}">{{ data.student_email }}</a></div>
+                                    <div class="student_info_1 student_graduate"><span>状态 |</span> {{ data.student_graduate }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_main_right_item">
+                            <img class="svg_background_left" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_top" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_bottom" src="{% static 'svg/'|add:data.student_background %}">
+                            <div class="item_container">
+                                <div class="student_info_block_2">
+                                    <div class="student_info_2 student_email"><span>邮箱 |</span> {{ data.student_email }}</div>
+                                    <div class="student_info_2 student_phone"><span>电话 |</span> {{ data.student_phone }}</div>
+                                    <div class="student_info_2 student_github_url"><span>GitHub |</span> {{ data.student_github_url }}</div>
+                                    <div class="student_info_2 student_csdn_url"><span>CSDN |</span> {{ data.student_csdn_url }}</div>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_main_right_item">
+                            <img class="svg_background_left" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_top" src="{% static 'svg/'|add:data.student_background %}">
+                            <img class="svg_background_right_bottom" src="{% static 'svg/'|add:data.student_background %}">
+                            <div class="student_achievement">{{ data.student_achievement }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

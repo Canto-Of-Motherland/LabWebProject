@@ -1,0 +1,112 @@
+Date : 2023-12-02 12:39:48
+Directory : d:\Desktop\LabWeb\LabWebProject
+Total : 69 files,  6070 codes, 98 comments, 577 blanks, all 6745 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |         12 |      3,108 |         12 |        322 |      3,442 |
+| JavaScript |         13 |      1,321 |         13 |        100 |      1,434 |
+| HTML       |          9 |        710 |          2 |          2 |        714 |
+| Python     |         20 |        701 |         67 |        147 |        915 |
+| SVG        |         14 |        230 |          4 |          5 |        239 |
+| SQL        |          1 |          0 |          0 |          1 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         69 |      6,070 |         98 |        577 |      6,745 |
+| . (Files)                                                                                    |          2 |         15 |          3 |          6 |         24 |
+| LabWebApp                                                                                    |         14 |        593 |          6 |         90 |        689 |
+| LabWebApp (Files)                                                                            |          8 |        486 |          1 |         58 |        545 |
+| LabWebApp\migrations                                                                         |          6 |        107 |          5 |         32 |        144 |
+| LabWebProject                                                                                |          5 |         93 |         58 |         52 |        203 |
+| static                                                                                       |         39 |      4,659 |         29 |        427 |      5,115 |
+| static\css                                                                                   |         12 |      3,108 |         12 |        322 |      3,442 |
+| static\css\self                                                                              |         10 |      2,135 |          0 |        320 |      2,455 |
+| static\css\tool                                                                              |          2 |        973 |         12 |          2 |        987 |
+| static\js                                                                                    |         13 |      1,321 |         13 |        100 |      1,434 |
+| static\js\self                                                                               |          9 |      1,315 |          7 |         98 |      1,420 |
+| static\js\tool                                                                               |          4 |          6 |          6 |          2 |         14 |
+| static\svg                                                                                   |         14 |        230 |          4 |          5 |        239 |
+| templates                                                                                    |          9 |        710 |          2 |          2 |        714 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                     | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\__init__.py                                        | Python     |          0 |          0 |          1 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\admin.py                                           | Python     |          3 |          0 |          3 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\apps.py                                            | Python     |          4 |          0 |          3 |          7 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0001_initial.py                         | Python     |         55 |          1 |          7 |         63 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0002_auto_20231013_1256.py              | Python     |         17 |          1 |          6 |         24 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0003_remove_students_student_address.py | Python     |         11 |          1 |          6 |         18 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0004_rename_students_student.py         | Python     |         11 |          1 |          6 |         18 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\0005_student_student_show.py            | Python     |         13 |          1 |          6 |         20 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\migrations\__init__.py                             | Python     |          0 |          0 |          1 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\models.py                                          | Python     |         37 |          0 |          6 |         43 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\tests.py                                           | Python     |          1 |          1 |          2 |          4 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\urls.py                                            | Python     |         14 |          0 |          2 |         16 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\util.py                                            | Python     |         35 |          0 |         12 |         47 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebApp\views.py                                           | Python     |        392 |          0 |         29 |        421 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\__init__.py                                    | Python     |          0 |          0 |          1 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\asgi.py                                        | Python     |          4 |          8 |          5 |         17 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\settings.py                                    | Python     |         81 |         27 |         37 |        145 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\urls.py                                        | Python     |          4 |         15 |          4 |         23 |
+| d:\Desktop\LabWeb\LabWebProject\LabWebProject\wsgi.py                                        | Python     |          4 |          8 |          5 |         17 |
+| d:\Desktop\LabWeb\LabWebProject\db.sqlite3                                                   | SQL        |          0 |          0 |          1 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\manage.py                                                    | Python     |         15 |          3 |          5 |         23 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\404.css                                      | CSS        |        104 |          0 |         15 |        119 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminNavigation.css                          | CSS        |        106 |          0 |         16 |        122 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminNews.css                                | CSS        |        166 |          0 |         26 |        192 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminNewsDetail.css                          | CSS        |        259 |          0 |         40 |        299 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\adminUserDetail.css                          | CSS        |        349 |          0 |         56 |        405 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\footer.css                                   | CSS        |         66 |          0 |         13 |         79 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\main.css                                     | CSS        |        395 |          0 |         56 |        451 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\navigation.css                               | CSS        |        262 |          0 |         33 |        295 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\signIn.css                                   | CSS        |        278 |          0 |         44 |        322 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\self\slider.css                                   | CSS        |        150 |          0 |         21 |        171 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\tool\bootstrap-datepicker-standalone.css          | CSS        |        503 |          6 |          1 |        510 |
+| d:\Desktop\LabWeb\LabWebProject\static\css\tool\bootstrap-datepicker.css                     | CSS        |        470 |          6 |          1 |        477 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\404.js                                        | JavaScript |         14 |          0 |          0 |         14 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminNews.js                                  | JavaScript |         66 |          0 |          3 |         69 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminNewsDetail.js                            | JavaScript |        171 |          0 |         10 |        181 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\adminUserDetail.js                            | JavaScript |        185 |          0 |          9 |        194 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\footer.js                                     | JavaScript |          0 |          0 |          1 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\main.js                                       | JavaScript |        222 |          7 |         20 |        249 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\navigation.js                                 | JavaScript |        166 |          0 |         12 |        178 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\signIn.js                                     | JavaScript |        366 |          0 |         30 |        396 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\self\slider.js                                     | JavaScript |        125 |          0 |         13 |        138 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\bootstrap-datepicker-zh-CN.js                 | JavaScript |          1 |          0 |          0 |          1 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\bootstrap-datepicker.js                       | JavaScript |          2 |          5 |          1 |          8 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\jquery-3-7-1.js                               | JavaScript |          1 |          1 |          1 |          3 |
+| d:\Desktop\LabWeb\LabWebProject\static\js\tool\sweetalert2.js                                | JavaScript |          2 |          0 |          0 |          2 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\404.svg                                           | SVG        |          8 |          0 |          0 |          8 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\achievement.svg                                   | SVG        |          5 |          1 |          0 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\btn_left.svg                                      | SVG        |          6 |          0 |          0 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\btn_right.svg                                     | SVG        |          6 |          0 |          0 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\btn_top.svg                                       | SVG        |          6 |          0 |          0 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\building.svg                                      | SVG        |         40 |          0 |          0 |         40 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\control.svg                                       | SVG        |         32 |          0 |          0 |         32 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\dasi.svg                                          | SVG        |         13 |          0 |          1 |         14 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\data.svg                                          | SVG        |         20 |          1 |          1 |         22 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\news.svg                                          | SVG        |         16 |          1 |          1 |         18 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\rose.svg                                          | SVG        |         28 |          1 |          1 |         30 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\search.svg                                        | SVG        |          6 |          0 |          0 |          6 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\search_active.svg                                 | SVG        |         22 |          0 |          1 |         23 |
+| d:\Desktop\LabWeb\LabWebProject\static\svg\whu.svg                                           | SVG        |         22 |          0 |          0 |         22 |
+| d:\Desktop\LabWeb\LabWebProject\templates\404.html                                           | HTML       |         33 |          0 |          0 |         33 |
+| d:\Desktop\LabWeb\LabWebProject\templates\adminBase.html                                     | HTML       |         33 |          0 |          0 |         33 |
+| d:\Desktop\LabWeb\LabWebProject\templates\adminNews.html                                     | HTML       |         29 |          0 |          0 |         29 |
+| d:\Desktop\LabWeb\LabWebProject\templates\adminNewsDetail.html                               | HTML       |         76 |          0 |          0 |         76 |
+| d:\Desktop\LabWeb\LabWebProject\templates\adminUserDetail.html                               | HTML       |        107 |          0 |          0 |        107 |
+| d:\Desktop\LabWeb\LabWebProject\templates\base.html                                          | HTML       |        122 |          0 |          0 |        122 |
+| d:\Desktop\LabWeb\LabWebProject\templates\main.html                                          | HTML       |        190 |          0 |          1 |        191 |
+| d:\Desktop\LabWeb\LabWebProject\templates\signIn.html                                        | HTML       |         63 |          0 |          0 |         63 |
+| d:\Desktop\LabWeb\LabWebProject\templates\test.html                                          | HTML       |         57 |          2 |          1 |         60 |
+| Total                                                                                        |            |      6,070 |         98 |        577 |      6,745 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    {% csrf_token %}
+    <title>{{ data.news_title }}</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/newsDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/newsDetail.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:newsCategory' news_category=data.news_category_url page_number='1' %}">{{ data.news_category }}</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">正文</a>
+        </div>
+        <div class="news_content">
+            <div class="news_title">{{ data.news_title }}</div>
+            <div class="block_info">
+                <div class="info_news news_author">撰稿人：{{ data.news_author }}　摄影：{{ data.news_photographer }}</div>
+                <div class="info_news news_post_datetime">发布时间：{{ data.news_post_datetime }}</div>
+                <div class="split_main"></div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

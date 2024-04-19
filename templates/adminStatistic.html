@@ -1,0 +1,43 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-统计数据</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'js/self/adminStatistic.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminStatistic.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">统计数据控制台</label>
+        <div class="split_statistic"></div>
+        <div class="operate_panel">
+            <div class="operate_panel_item">
+                <label class="labels label_year">已成立年份</label>
+                <input class="inputs input_year" id="1" type="number" min="0" value="{{ data.statistic_year }}" onblur="submitStatistic(this)">
+            </div>
+            <div class="operate_panel_item">
+                <label class="labels label_achievement">　成果数量</label>
+                <input class="inputs input_achievement" id="2" type="number" min="0" value="{{ data.statistic_achievement }}">
+            </div>
+            <div class="operate_panel_item">
+                <label class="labels label_graduate">已培养人才</label>
+                <input class="inputs input_graduate" id="3" type="number" min="0" value="{{ data.statistic_graduate }}">
+                <button class="buttons btn_team" type="button" onclick="autoCalculate(this)">自动计算</button>
+            </div>
+            <div class="operate_panel_item">
+                <label class="labels label_team">团队成员数</label>
+                <input class="inputs input_team" id="4" type="number" min="0" value="{{ data.statistic_team }}">
+                <button class="buttons btn_team" type="button" onclick="autoCalculate(this)">自动计算</button>
+            </div>
+            <div class="operate_panel_item">
+                <label class="labels label_project">承担项目数</label>
+                <input class="inputs input_project" id="5" type="number" min="0" value="{{ data.statistic_project }}">
+            </div>
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已修改</label>
+        </div>
+    </div>
+{% endblock body %}

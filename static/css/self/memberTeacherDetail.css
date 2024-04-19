@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+    scrollbar-color: #f7f7f7;
+}
+
+span {
+    font-weight: 600;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+
+.content_inner {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+
+.content_title {
+    position: relative;
+    font-size: 30px;
+    color: #090909;
+    letter-spacing: 1px;
+}
+
+.content_subtitle {
+    position: relative;
+    width: 100%;
+    left: calc(100% - 40px);
+    top: -23px;
+    font-size: 16px;
+    color: #9d9d9d;
+}
+
+.split_content {
+    position: relative;
+    top: -18px;
+    width: 100%;
+    height: 1px;
+    background-color: #c3c3c3;
+}
+
+.content_main {
+    position: relative;
+    width: 100%;
+}
+
+.content_main_left {
+    position: absolute;
+    width: 12%;
+    height: calc(100% - 180px);
+    overflow: auto;
+}
+
+.content_main_left::-webkit-scrollbar {
+    display: none;
+}
+
+.left_item {
+    position: relative;
+    height: 32px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.left_item_vertical {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #c3c3c3;
+    transition-duration: 200ms;
+}
+
+.left_item_title {
+    position: absolute;
+    line-height: 32px;
+    left: 10px;
+    width: calc(100% - 10px);
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #6d6d6d;
+    letter-spacing: 2px;
+    transition-duration: 200ms;
+}
+
+.left_item_title:hover {
+    color: #903612;
+    transition-duration: 200ms;
+}
+
+.content_main_right {
+    position: relative;
+    left: 16%;
+    width: 84%;
+}
+
+.right_item_title {
+    position: relative;
+    font-size: 24px;
+    color: #444444;
+    letter-spacing: 3px;
+}
+
+.right_item_split {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+    background-color: #c3c3c3;
+}
+
+.right_item_content {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    margin: 20px 0;
+}
+
+.right_item_content_1 {
+    display: grid;
+    grid-template-columns: 76% 24%;
+}
+
+.teacher_name_1 {
+    position: relative;
+    font-size: 24px;
+    color: #090909;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.teacher_title_1 {
+    position: absolute;
+    top: 12px;
+    font-size: 14px;
+    color: #6d6d6d;
+    left: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.teacher_introduction {
+    position: relative;
+    font-size: 16px;
+    padding: 10px 20px 0 20px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    color: #090909;
+    text-indent: 32px;
+}
+
+.teacher_photo {
+    position: relative;
+    left: 10px;
+    width: calc(100% - 10px);
+}
+
+li {
+    position: relative;
+    width: calc(100% - 10px);
+    left: 10px;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    color: #090909;
+}
+
+.teacher_class {
+    position: relative;
+    font-size: 16px;
+    padding: 0 20px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    color: #090909;
+    text-indent: 32px;
+}
+
+.teacher_reviewer {
+    position: relative;
+    font-size: 16px;
+    padding: 0 20px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    color: #090909;
+    text-indent: 32px;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-4vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(4vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        transform: translateY(4vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

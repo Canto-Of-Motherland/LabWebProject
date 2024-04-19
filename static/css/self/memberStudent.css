@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+
+.split_top {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 40px;
+    height: 1px;
+    background-color: #d6d6d6;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.student_title {
+    position: relative;
+    font-size: 28px;
+    width: 100%;
+    padding-bottom: 20px;
+    color: #090909;
+    text-align: center;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.content_inner {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.student_list_title {
+    position: relative;
+    font-size: 22px;
+    color: #090909;
+    letter-spacing: 1px;
+}
+
+.student_list_subtitle {
+    position: relative;
+    left: 120px;
+    top: -20px;
+    font-size: 14px;
+    color: #9d9d9d;
+}
+
+.split_student {
+    position: relative;
+    top: -16px;
+    width: 100%;
+    height: 1px;
+    background-color: #c3c3c3;
+}
+
+.student_item_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 100%;
+    justify-content: center;
+}
+
+.student_item {
+    position: relative;
+    height: 180px;
+    margin: 16px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    display: block;
+    overflow: hidden;
+    transition-duration: 300ms;
+}
+
+.student_item:hover {
+    transform: scale(1.03);
+    border: 2px solid #903612;
+    transition-duration: 300ms;
+}
+
+.student_photo {
+    position: absolute;
+    width: 140px;
+    background-size: cover;
+    background-position: center; 
+    height: 180px;
+    overflow: hidden;
+}
+
+.student_name {
+    position: relative;
+    left: 160px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #090909;
+    letter-spacing: 2px;
+    transition-duration: 300ms;
+}
+
+.student_item:hover .student_name {
+    color: #903612;
+    transition-duration: 300ms;
+}
+
+.student_grade {
+    position: relative;
+    left: 160px;
+    padding-top: 6px;
+    font-size: 12px;
+    color: #c3c3c3;
+    transition-duration: 300ms;
+}
+
+.student_item:hover .student_grade {
+    color: #eee5db;
+    transition-duration: 300ms;
+}
+
+.split_student_info {
+    position: relative;
+    left: 160px;
+    top: 8px;
+    height: 1px;
+    width: calc(100% - 160px);
+    background-color: #c3c3c3;
+    transition-duration: 300ms;
+}
+
+.student_item:hover .split_student_info {
+    background-color: #eee5db;
+    transition-duration: 300ms;
+}
+
+.student_self_introduction {
+    position: relative;
+    left: 160px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #6d6d6d;
+    line-height: 24px;
+    width: calc(100% - 160px);
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition-duration: 300ms;
+}
+
+.student_item:hover .student_self_introduction {
+    color: #903612;
+    transition-duration: 300ms;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-4vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        transform: translateY(4vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        transform: translateY(4vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,108 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>用户控制台-{{ data.student_name }}</title>
+    <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tool/bootstrap-datetimepicker-zh-CN.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminUserDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tool/bootstrap-datetimepicker.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminUserDetail.css' %}">
+{% endblock %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <div class="operate_panel">
+            <a class="to_back" href="{% url 'LabWebApp:adminUser' %}">&lt; 返回用户列表</a>
+            <div class="operate_panel_content">
+                <div class="block_photo_upload">
+                    <label class="labels label_photo_upload">上传头像</label>
+                    <div class="block_photo">
+                        <input type="file" class="file_photo" name="file_photo" id="file_photo" accept="image/*" onchange="setPath(this)">
+                        <div class="occupy_photo_upload"></div>
+                        <script type="text/javascript">
+                            let occupy = '{{ data.student_photo }}';
+                            if (occupy !== '') {
+                                $('.occupy_photo_upload').text(occupy);
+                            } else {
+                                $('.occupy_photo_upload').text('未选择');
+                            }
+                        </script>
+                        <button type="button" class="btn_upload">上传图片</button>
+                        <button type="button" class="btn_clear" onclick="clearPath()">删除已上传头像</button>
+                    </div>
+                </div>
+                <div class="block_name">
+                    <label class="labels label_name">　　姓名</label>
+                    <input class="inputs input_name" name="input_name" id="input_name" placeholder="请输入姓名" value="{{ data.student_name }}">
+                </div>
+                <div class="block_gender">
+                    <label class="labels label_gender">　　性别</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_1" name="radios" value="1">男</label>
+                    <label class="labels label_radio"><input type="radio" class="radios radio_2" name="radios" value="2">女</label>
+                </div>
+                <script type="text/javascript">
+                    let value = '{{ data.student_gender }}';
+                    $('.radio_' + value).attr('checked', true);
+                </script>
+                <div class="block_grade">
+                    <label class="labels label_grade">　　年级</label>
+                    <input class="inputs input_grade" name="input_grade" id="input_grade" value="{{ data.student_grade }}">
+                    <label class="labels label_grade_split">级</label>
+                    <select class="select_grade">
+                        <option value="1">本科</option>
+                        <option value="2" selected>硕士</option>
+                        <option value="3">博士</option>
+                    </select>
+                    <script>
+                        $('.select_grade').val('{{ data.student_degree }}');
+                    </script>
+                </div>
+                <div class="block_birthday">
+                    <label class="labels label_birthday">　　生日</label>
+                    <input class="inputs input_birthday" name="input_birthday" id="input_birthday" placeholder="请选择生日" data-date-format="yyyy-mm-dd" value="{{ data.student_birthday }}">
+                </div>
+                <div class="block_phone">
+                    <label class="labels label_phone">联系电话</label>
+                    <input class="inputs input_phone" name="input_phone" id="input_phone" placeholder="请输入联系电话" value="{{ data.student_phone }}">
+                </div>
+                <div class="block_email">
+                    <label class="labels label_email">　　邮箱</label>
+                    <input class="inputs input_email" name="input_email" id="input_email" placeholder="请输入邮箱" value="{{ data.student_email }}">
+                </div>
+                <div class="block_github_url">
+                    <label class="labels label_github_url">&nbsp; GitHub</label>
+                    <input class="inputs input_github_url" name="input_github_url" id="input_github_url" placeholder="请输入GitHub地址" value="{{ data.student_github_url }}">
+                </div>
+                <div class="block_csdn_url">
+                    <label class="labels label_csdn_url">&nbsp;&nbsp;&nbsp; CSDN</label>
+                    <input class="inputs input_csdn_url" name="input_csdn_url" id="input_csdn_url" placeholder="请输入CSDN地址" value="{{ data.student_csdn_url }}">
+                </div>
+                <div class="block_proverb">
+                    <label class="labels label_proverb">　　格言</label>
+                    <input class="inputs input_proverb" name="input_proverb" id="input_proverb" placeholder="请输入格言" value="{{ data.student_proverb }}">
+                </div>
+                <div class="block_self_introduction">
+                    <label class="labels label_self_introduction">自我介绍</label>
+                    <textarea class="textarea_self_introduction" name="textarea_self_introduction" id="textarea_self_introduction" placeholder="请输入自我介绍">{{ data.student_self_introduction }}</textarea>
+                </div>
+                <div class="block_major">
+                    <label class="labels label_major">　　专业</label>
+                    <input class="inputs input_major" name="input_major" id="input_major" placeholder="请输入专业" value="{{ data.student_major }}">
+                </div>
+                <div class="block_achievement">
+                    <label class="labels label_achievement">　　成果</label>
+                    <textarea class="textarea_achievement" name="textarea_achievement" id="textarea_achievement" placeholder="请输入成果" >{{ data.student_achievement }}</textarea>
+                </div>
+                <div class="block_confirm">
+                    <label class="label_tip"></label>
+                    <button type="button" class="btn_submit" onclick="submitForm()">保　存</button>
+                    <button type="button" class="btn_cancel" onclick="">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

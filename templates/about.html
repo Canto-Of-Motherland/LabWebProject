@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>关于我们</title>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=hkT0GuDUoEA5nqlnUljwLvjNSBMh7Zhm"></script>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/about.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/about.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">关于我们</a>
+        </div>
+        <div class="content_inner">
+            <div class="split_item"></div>
+            <div class="about_title">关于我们</div>
+            <div class="content_block_1">
+                <div class="content_text">DASI（武汉大学数据科学与智能应用实验室）位于武汉大学信息管理学院三楼327室，负责人为洪亮教授。“DASI”的含义是“Data Science and Intelligent Application Lab (WhuDasi Lab)”，研究集中在数据科学与智能化的结合，以及领域应用上的深入探索。主要研究方向包括知识图谱、数据智能及数字金融，从而探索出新的人工智能范式。</div>
+                <div class="content_photo" style="background-image: url('/media/s8.jpg');"></div>
+            </div>
+            <div class="content_block_2">
+                <div class="content_map" id="map"></div>
+                <script type="text/javascript">
+                    $('#mark').show();
+                    let map = new BMap.Map('map');
+                    let point = new BMap.Point(114.381258,30.542965);
+                    map.centerAndZoom(point, 15);
+                    map.enableScrollWheelZoom(true);
+                    let marker = new BMap.Marker(point);
+                    map.addOverlay(marker);
+                    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                    let opts = {
+                        position: point,
+                        offset: new BMap.Size(20, -30),
+                    };
+                    let label = new BMap.Label('武汉大学信息管理学院<br>数据科学与智能应用实验室', opts);
+                    label.setStyle({
+                        color: '#903612',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                    });
+                    map.addOverlay(label);
+                    window.setTimeout(function () {
+                        map.panTo(new BMap.Point(114.381258,30.542965));
+                    }, 2000);
+                </script>
+                <div class="content_info">
+                    <a class="content_info_item" href="mailto:hong@whu.edu.cn?subject=招生应聘" style="text-decoration: none; color: #4c4c4c"><span>　联系我们 |</span> hong@whu.edu.cn</a>
+                    <div class="content_info_item"><span>实验室地址 |</span> 武汉大学信息管理学院三楼327室</div>
+                    <div class="content_info_item">　　　<span>邮编 |</span> 430072</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>洪亮 教授</title>
+    <script type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/memberTeacherDetail.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/memberTeacherDetail.css' %}">
+{% endblock head %}
+{% block body %}
+    <div class="head_photo_cover">
+        <img class="head_photo" src="{% static 'img/top.png' %}">
+    </div>
+    <div class="content">
+        <div class="breadcrumb_navigation">
+            <img class="svg_location" src="{% static 'svg/location.svg' %}"></img>
+            <label class="current">当前位置：</label>
+            <a class="breadcrumb_item" href="{% url 'LabWebApp:main' %}">首页</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">实验室成员</a>
+            <label class="next">&nbsp;&gt;&nbsp;</label>
+            <a class="breadcrumb_item" href="">洪亮教授</a>
+        </div>
+        <div class="split_top"></div>
+        <div class="content_inner">
+            <div class="content_title">洪亮</div>
+            <div class="content_subtitle">教授</div>
+            <div class="split_content"></div>
+            <div class="content_main">
+                <div class="content_main_left">
+                    <div class="left_item" id="1" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">简介</div>
+                    </div>
+                    <div class="left_item" id="2" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">研究方向</div>
+                    </div>
+                    <div class="left_item" id="3" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">教学课程</div>
+                    </div>
+                    <div class="left_item" id="4" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">专著</div>
+                    </div>
+                    <div class="left_item" id="5" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">学术论文</div>
+                    </div>
+                    <div class="left_item" id="6" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">专利软著</div>
+                    </div>
+                    <div class="left_item" id="7" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">代表项目</div>
+                    </div>
+                    <div class="left_item" id="8" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">学术奖励</div>
+                    </div>
+                    <div class="left_item" id="9" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">学术组织兼职</div>
+                    </div>
+                    <div class="left_item" id="10" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">任审稿人</div>
+                    </div>
+                    <div class="left_item" id="11" onclick="changeActive(this)">
+                        <div class="left_item_vertical"></div>
+                        <div class="left_item_title">参会</div>
+                    </div>
+                </div>
+                <div class="content_main_right">
+                    <div class="right_item" id="1">
+                        <div class="right_item_title">简介</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content right_item_content_1">
+                            <div class="teacher_info_1">
+                                <a class="teacher_name_1" href="">洪亮</a>
+                                <div class="teacher_title_1">（1982 - ），教授、博士生导师、武汉大学数据科学与智能应用实验室主任</div>
+                                <div class="teacher_introduction">洪亮于2009年毕业于华中科技大学计算机学院，获工学博士学位，弗吉尼亚大学(University of Virginia)计算机系联合培养博士。2012年担任微软亚洲研究院访问研究员。2015-2016年南加州大学计算机系访问学者。在TKDE、TKDD、管理科学学报等国内外期刊和会议上发表论文50余篇，并获得多项国内外专利授权，撰写中英文专著多部。2016年获得湖北省自然科学优秀学术论文二等奖，2017年入选武汉大学珞珈青年学者。先后承担国家重点研发计划，国家自然科学基金重点项目、面上项目、青年项目，教育部博士点基金，湖北省重点研发计划等各类国家级、省部级和企业科研项目。现为中国计算机学会(CCF)高级会员，CCF数据库专业委员会委员，ACM、IEEE会员。目前担任武汉大学信息管理学院保密管理系书记、副主任，数据科学专业负责人，武汉大学大数据研究院技术研发中心主任，武汉大学信息资源研究中心信息集成与应用实验室主任。</div>    
+                            </div>
+                            <img class="teacher_photo" src="/media/teacher.jpg">
+                        </div>
+                    </div>
+                    <div class="right_item" id="2">
+                        <div class="right_item_title">研究方向</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li><span>知识图谱</span>：知识图谱构建技术，领域知识图谱应用（金融风险、数字人文）</li>
+                            <li><span>数据智能</span>：大数据分析技术，大数据安全与保密，情报智能分析</li>
+                            <li><span>数字金融</span>：金融知识图谱构建与应用，金融风险分析与管理</li>
+                            <li><span>图谱开发</span>：研发知识图谱自动化构建系统CrowdIE和知融金融大数据平台</li>
+                        </div>
+                    </div>
+                    <div class="right_item" id="3">
+                        <div class="right_item_title">教学课程</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <div class="teacher_class">数据库原理与应用，数据分析与管理，人工智能，人工智能安全保密，知识图谱</div>
+                        </div>
+                    </div>
+                    <div class="right_item" id="4">
+                        <div class="right_item_title">专著</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li><span>洪亮</span>. 图数据管理与挖掘, 科学出版社, 2016.</li>
+                            <li><span>洪亮</span>. 移动数据服务关键技术, 武汉大学出版社, 2014.</li>
+                            <li><span>Liang Hong</span>, Yafeng Wu and Sang H. Son. Mobile Data Services with Location-awareness and Event Detection in Hybrid Wireless Sensor Networks. Handbook of Mobile Systems Applications and Services. Auerbach Publications. 2012. （专著章节）</li>
+                        </div>
+                    </div>
+                    <div class="right_item" id="5">
+                        <div class="right_item_title">学术论文</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li><span>洪亮</span>, 欧阳晓凤. 金融股权知识大图的知识关联发现与风险分析. 管理科学学报，2021. </li>
+                            <li>Li R, He H, Wang R, Ruan S, He T, Bao J, Zhang J, <span>Hong L</span>, Zheng Y. TrajMesa: A Distributed NoSQL-Based Trajectory Data Management System. IEEE Transactions on Knowledge and Data Engineering. 2021. </li>
+                            <li><span>Liang Hong</span>; Haoshuai Xu; Xiaoyue Shi; Constructing Ontology of Brain Areas and Autism to Support Domain Knowledge Exploration and Discovery, International Journal of Computational Intelligence Systems, 2021. </li>
+                            <li><span>Liang Hong</span>; Wenjun Hou; Zonghui Wu; Huijie Han; A Cooperative Crowdsourcing Framework for Knowledge Extraction in Digital Humanities – Cases on Tang Poetry, Aslib Journal of Information Management, 2020, 1(1). </li>
+                            <li><span>Liang Hong</span>; Wenjun Hou; Lina Zhou; KnowPoetry: A Knowledge Service Platform for Tang Poetry Research Based on Domain-Specific Knowledge Graph, Library Trend, 69(3), 2020. </li>
+                            <li>Ruiyuan Li, Sijie Ruan, Jie Bao, Yanhua Li, Yingcai Wu, <span>Liang Hong</span>, Yu Zheng. Efficient Path Query Processing over Massive Trajectories on the Cloud. IEEE Transactions on Big Data, 2018. </li>
+                            <li>Tieyun Qian, Bei Liu, <span>Liang Hong</span>. Time and Location Aware POI Recommendation in LBSN. Journal of Computer Science and Technology, 2018. </li>
+                            <li><span>Liang Hong</span>, Mengqi Luo, Ruixue Wang, Peixin Lu, Wei Lu, and Long Lu. Big Data in Healthcare: Applications and Challenges. Data and Information Management, 2018. </li>
+                            <li>Yuling Shi, Zhiyong Peng, <span>Liang Hong</span>. SoC-constrained Team Formation with Self-Organizing mechanism in Social Networks. Knowledge-Based Systems, 2017. </li>
+                            <li><span>Liang Hong</span>, Yu Zheng, Duncan Yung, Jingbo Shang, and Lei Zou. Detecting Urban Black Holes Based on Human Mobility Data. In Proceeding of ACM SIGSPATIAL, 2015. </li>
+                            <li><span>Liang Hong</span>, Lei Zou, Xiang Lian and Philip S. Yu. Subgraph Matching with Set Similarity in a Large Graph. IEEE Transaction on Knowledge and Data Engineering (TKDE), Vol. 27, No.9, pp 2507-2521, 2015. </li>
+                            <li><span>Liang Hong</span>, Lei Zou, Cheng Zeng, Luming Zhang, Jian Wang and Jilei Tian. Context-aware Recommendation Using Role-based Trust Network. ACM Transactions on Knowledge Discovery from Data (TKDD)，Vol. 10, No. 2, 2015. </li>
+                            <li>Luming Zhang, Meng Wang, Liqiang Nie, <span>Liang Hong</span>, Yong Rui, and Qi Tian. Retargeting Semantically-Rich Photos. IEEE Transactions on Multimedia (IEEE MM), 2015. </li>
+                            <li>邓诗琦, <span>洪亮</span>. 面向智能应用的领域本体构建研究——以反电话诈骗领域为例. 数据分析与知识发现, 2019, 3(7). </li>
+                            <li>李瑞远, <span>洪亮</span>. 一种基于包含度的子图匹配方法. 软件学报, 2017. </li>
+                            周莉娜,<span>洪亮</span>,高子阳. 唐诗知识图谱的构建及其智能知识服务设计[J].图书情报工作,2019,63(2):24-33. </li>
+                            <li>Wenjun Hou, Huijie Han, <span>Liang Hong</span>. CHCI: A Crowdsourcing Human Computer Interaction Framework for Cultural Heritage Knowledge. JCDL, 2020. </li>
+
+                        </div>
+                    </div>
+                    <div class="right_item" id="6">
+                        <div class="right_item_title">专利软著</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li><span>Liang Hong</span>, Cheng Zeng Cheng, Jian Wang, Jilei Tian and Xiaogang Yang. Role-based Trust Network. 国际专利, 申请号: PCT/CN2011/074811. </li>
+                            <li>Cheng Zeng, Jian Wang, <span>Liang Hong</span>, Jilei Tian, Xiaogang Yang and Huanhuan Cao. Enabling Advanced Context-Embedded User Profiles. 国际专利, 申请号: PCT/CN2011/073564. </li>
+                            <li><span>洪亮</span>, 张禄佳, 欧阳晓凤. 基于知识图谱的金融知识查询服务接口设计与实现方法. 中国国家专利. </li>
+                            <li><span>洪亮</span>, 欧阳晓凤, 陈昊冉.一种金融股权知识大图的多层股权穿透算法. 中国国家专利. </li>
+                            <li>基于知识图谱的金融风险分析与预警系统. 计算机软件著作权. 2021. </li>
+                            <li>基于知识图谱的科技安全风险预警系统. 计算机软件著作权. 2021.</li>     
+                        </div>
+                    </div>
+                    <div class="right_item" id="7">
+                        <div class="right_item_title">代表项目</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li><span>[主持]</span> 国家自然科学基金面上项目, 基于科学共同体知识大图的隐性合作关系发现与深度挖掘, 2021.1-2024.12.</li>
+                            <li><span>[参与]</span> 科技创新2030-“新一代人工智能”重大项目课题“金融时序知识图谱查询与分析平台及应用验证”（2020AAA0108505）2020-2023.</li>
+                            <li><span>[参与]</span> 国家自然科学基金重点项目, 技术赋能的商务信息管理和决策新范式, 2022.1-2026.12.</li>
+                            <li><span>[参与]</span> 湖北省重点研发计划项目, 知识图谱与机器学习融合及高效推理关键技术研究,  2020-2022.</li>
+                            <li><span>[主持]</span> 云计算和大数据国家重点研发计划, 图模式匹配查询系统的研究和实现, 2016.7-2019.6.</li>
+                            <li><span>[主持]</span> 教育部人文社会科学青年基金项目, 数字人文视角下唐诗知识图谱构建与领域应用研究, 2019-2022. </li>
+                            <li><span>[参与]</span> 国家自然科学基金重大研发计划重点支持项目, 基于知识关联的金融大数据价值分析、发现及协同创造机制, 2016.9-2020.8.</li>
+                            <li><span>[参与]</span> 湖省自然科学基金创新研究群体项目, 湖北省科技厅, 2019CFA025, 大数据资源语义组织与管理应用研究, 2019.1-2021.12.</li>
+                            <li><span>[参与]</span> 国家重点研发计划, 科技部, 2018YFC0806900, 国家安全风险管理关键技术研究与应用, 2018-2021.</li>
+                            <li><span>[主持]</span> 湖北省自然科学基金面上项目, 面向大规模时空图的社区搜索关键技术研究, 2018-2020.</li>
+                            <li><span>[主持]</span> 国家自然科学基金青年基金项目, 移动社会网络中基于信任关系的情境感知推荐研究, 2014.1-2016.12.</li>
+
+                        </div>
+                    </div>
+                    <div class="right_item" id="8">
+                        <div class="right_item_title">学术奖励</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li>全国高校教师教学创新大赛三等奖，2021</li>
+                            <li>武汉大学珞珈青年学者，2017</li>
+                            <li>图书情报顶级学术会议JCDL 2020 最佳实践论文奖，2020</li>
+                            <li>中国科技情报学会情报科学奖，情报科学创新团队奖，2020</li>
+                            <li>湖北省自然科学基金创新群体核心成员，2019</li>
+                            <li>武汉大学教学成果奖一等奖，2017</li>
+                            <li>湖北省自然科学优秀学术论文二等奖， 2016</li>
+                            <li>武汉大学优秀教学论文一等奖，2016</li>
+                            <li> “上海开放数据创新应用大赛”专项提名奖，指导老师，2016</li>
+                            <li>第十五届“挑战杯”全国总决赛“一带一路”专项赛，指导老师，2017</li>
+                            <li>武汉大学“自强杯”大学生课外学术科技作品竞赛一等奖，指导老师，2017</li>
+                            <li>[特邀报告] 机器学习和人工智能在金融领域应用研究, 教育部金融教指委金融学术研究能力提升大讲堂, 2020</li>
+                            <li>[特邀报告] 面向系统性金融风险的股权知识大图研究与平台, 第四届知识服务与情报工程学术交流会, 2019</li>
+                            <li>[特邀报告] 中文诗歌知识图谱的构建与服务, 中国社会科学情报学会数字人文专委会学术年会, 2019</li>
+
+                        </div>
+                    </div>
+                    <div class="right_item" id="9">
+                        <div class="right_item_title">学术组织兼职</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li>“文化遗产智能计算”教育部文科重点实验室（筹）副主任</li>
+                            <li>大数据分析与应用技术国家工程实验室（北京大学）研究员</li>
+                            <li>中国计算机学会高级会员，数据库专业委员会委员</li>
+                            <li>中国互联网协会青年专家</li>
+                        </div>
+                    </div>
+                    <div class="right_item" id="10">
+                        <div class="right_item_title">任审稿人</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <div class="teacher_reviewer">Data and Information Management (学术编辑)、IEEE Transactions on Knowledge and Data Engineering (SCI)、ACM Transactions on Intelligent Systems and Technology (SCI)、World Wide Web Journal (Springer Journal，SCI)、GeoInformatica (Springer Journal，SCI)、IEEE Transactions on Big Data (SCI)、《计算机学报》、《软件学报》、《图书情报知识》、《信息资源管理学报》</div>
+                        </div>
+                    </div>
+                    <div class="right_item" id="11">
+                        <div class="right_item_title">参会</div>
+                        <div class="right_item_split"></div>
+                        <div class="right_item_content">
+                            <li>国际人工智能联合会议（International Joint Conference on Artificial Intelligence, IJCAI）2020, 2021程序委员会委员</li>
+                            <li>iConference 2018-2021, PC Member, Web Chair</li>
+                            <li>JCDL 2020，PC Member, Treasurer</li>
+                            <li>ASIS&T-AP 2020, Web Chair</li>
+                            <li>The 18th Asia Pacific Web Conference (ApWeb 2016), PC Member</li>
+                            <li>The 1st International Workshop on Big Social Data (BSD 2015), PC Chair
+                            <li>The 16th International Conference on Web-Age Information Management (WAIM 2016), PC Member</li>
+                            <li>The 17th Asia Pacific Web Conference (ApWeb 2015)，PC Member</li>
+                            <li>The 18th International Conference on Database Systems for Advanced Applications (DASFAA 2013)，Web Chair</li>
+                            <li>The 1st International Workshop on Big Social Data (BSD 2015), PC Chair
+                            <li>中国数据库大会，程序委员会委员</li>
+                            <li>全国知识图谱与语义计算大会，程序委员会委员</li>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

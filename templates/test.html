@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masonry Layout</title>
+<style>
+    /* 样式可以根据需要进行调整 */
+    .grid {
+        margin: 0 auto;
+    }
+    .grid-item {
+        width: calc(20% - 10px); /* 设置每个元素的宽度 */
+        margin-bottom: 10px; /* 元素之间的间距 */
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<div class="grid" id="grid">
+    <!-- 这里是动态添加的瀑布流元素 -->
+</div>
+
+<!-- 引入 Masonry.js 库 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+<script>
+    // 模拟加载数据
+    function loadData() {
+        // 这里可以是 AJAX 请求获取数据，或者其他方式生成元素
+        var data = ['Item 1 啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10'];
+        return data;
+    }
+
+    // 创建元素并添加到容器中
+    function createElements() {
+        var grid = document.getElementById('grid');
+        var data = loadData();
+        data.forEach(function(item) {
+            var gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            gridItem.textContent = item;
+            grid.appendChild(gridItem);
+        });
+    }
+
+    // 初始化 Masonry 实例
+    function initMasonry() {
+        var grid = document.getElementById('grid');
+        var masonry = new Masonry(grid, {
+            itemSelector: '.grid-item',
+            columnWidth: 200,
+            fitWidth: true // 自适应容器宽度
+        });
+    }
+
+    // 页面加载完成后调用创建元素函数和初始化 Masonry 函数
+    window.onload = function() {
+        createElements();
+        initMasonry();
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/self/signIn.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/self/signIn.css' %}">
+    </head>
+    <body>
+        {% csrf_token %}
+        <div class="block_background">
+            <img class="background_img" src="/media/夕阳2.png">
+            <div class="cover_background"></div>
+        </div>
+        <div class="block_main">
+            <div class="sign_title">
+                <label class="title">数据科学与智能应用实验室</label>
+            </div>
+            <div class="navigation">
+                <a class="to_sign_password" onclick="toLeft()">密码登录</a>
+                <a class="to_sign_code" onclick="toRight()">动态码登录</a>
+            </div>
+            <div class="window">
+                <div class="sign">
+                    <form class="sign_password">
+                        <div class="email_1">
+                            <label class="labels label_email_1">邮　箱</label>
+                            <input class="inputs input_email_1" name="input_email_1" id="input_email_1" onfocus="activeInput(this)" onblur="remainInput(this)" oninput="checkEmailInfo1()">
+                            <label class="infos info_email_1">请输入您的邮箱</label>
+                        </div>
+                        <div class="password">
+                            <label class="labels label_password">密　码</label>
+                            <input class="inputs input_password" name="input_password" id="input_password" type="password" onfocus="activeInput(this)" onblur="remainInput(this)" oninput="checkPasswordInfo()">
+                            <label class="infos info_password">请输入您的密码</label>
+                        </div>
+                    </form>
+                    <form class="sign_code">
+                        <div class="email_2">
+                            <label class="labels label_email_2">邮　箱</label>
+                            <div class="inputs occupy_input"></div>
+                            <input class="input_email_2" name="input_email_2" id="input_email_2" onfocus="activeInput(this)" onblur="remainInput(this)" oninput="checkEmailInfo2()">
+                            <button class="btn_get_code" type="button" onclick="sendMail()">获取验证码</button>
+                            <label class="infos info_email_2">请输入您的邮箱</label>
+                        </div>
+                        <div class="code">
+                            <label class="labels label_code">验证码</label>
+                            <input class="inputs input_code" name="input_code" id="input_code" type="tel" maxlength="6" onfocus="activeInput(this)" onblur="remainInput(this)" oninput="checkCodeInfo()">
+                            <label class="infos info_code">请输入验证码</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="link">
+                <a class="clear" onclick="clearInfo()">清空信息</a>
+                <a class="to_forget" href="{% url 'LabWebApp:main' %}">忘记密码</a>
+            </div>
+            <button class="btn_sign_in " type="button" onclick="signIn()">登　录</button>
+        </div>
+    </body>
+</html>

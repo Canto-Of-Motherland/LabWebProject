@@ -1,0 +1,32 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>学术著作</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/self/adminResearchWork.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminResearchWork.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">学术著作控制台</label>
+        <button type="button" class="btn_add" onclick="window.location.href = 'research-work/add'">新增著作</button>
+        <div class="split_work"></div>
+        <div class="operate_panel">
+            {% for item in data %}
+                <div class="operate_panel_item">
+                    <label class="item_number">{{ item.work_num }}</label>
+                    <a class="to_work" href="{{ item.work_link }}">{{ item.work_title }}</a>
+                    <label class="item_time">出版时间：{{ item.work_date }}</label>
+                    <a class="to_detail" href="{% url 'LabWebApp:adminResearchWorkDetail' work_url=item.work_id %}">编辑</a>
+                    <button type="button" class="btn_delete" id="{{ item.work_id }}" onclick="deleteWork(this)">删除</button>
+                    <div class="split_item"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已删除</label>
+        </div>
+    </div>
+{% endblock body %}

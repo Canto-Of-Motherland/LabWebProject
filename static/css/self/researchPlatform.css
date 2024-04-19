@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+}
+
+.head_photo_cover {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.head_photo {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    box-shadow: 0 0 20px #090909;
+    width: 100%;
+    overflow: hidden;
+    background: url(/static/img/texture.png) repeat;
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.breadcrumb_navigation {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 60px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.svg_location {
+    position: absolute;
+    height: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current {
+    position: relative;
+    padding-left: 30px;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.breadcrumb_item {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 14px;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.breadcrumb_item:hover {
+    color: #903612;
+}
+
+.next {
+    position: relative;
+    top: calc(50% - 11px);
+    font-size: 16px;
+    color: #6d6d6d;
+}
+
+
+.content_title {
+    position: relative;
+    font-size: 30px;
+    color: #090909;
+    letter-spacing: 1px;
+}
+
+.content_inner {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    animation: fadeInBottom 1s ease-in-out;
+}
+
+.content_subtitle {
+    position: relative;
+    left: 140px;
+    top: -23px;
+    font-size: 16px;
+    color: #9d9d9d;
+}
+
+.split_content {
+    position: relative;
+    top: -14px;
+    width: 100%;
+    height: 1px;
+    background-color: #c3c3c3;
+}
+
+.platform_container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.platform_name {
+    position: relative;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #903612;
+    text-indent: 10px;
+    line-height: 50px;
+    border-bottom: #903612 3px solid; 
+    border-left: #903612 15px solid;
+}
+
+.platform_intro {
+    position: relative;
+    padding-top: 10px;
+    width: 90%;
+    left: 5%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 28px;
+    color: #6d6d6d;
+}
+
+.platform_link {
+    position: absolute;
+    font-size: 16px;
+    color: #903612;
+    text-decoration: none;
+    top: 22px;
+    transition-duration: 200ms;
+}
+
+.platform_link:hover {
+    transform: translateX(8%);
+    transition-duration: 200ms;
+}
+
+.platform_official {
+    right: 140px;
+}
+
+.platform_document {
+    right: 20px;
+}

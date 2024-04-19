@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="{% static 'js/tool/jquery-3-7-1.js' %}"></script>
+        <script defer type="text/javascript" src="{% static 'js/self/navigation.js' %}"></script>
+        <script defer type="text/javascript" src="{% static 'js/self/footer.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/self/navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/self/footer.css' %}">
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body>
+        {% csrf_token %}
+        <div class="navigation">
+            <a class="logo" href="{% url 'LabWebApp:main' %}">
+                <img class="svg_whu" src="{% static 'svg/whu.svg' %}">
+                <img class="svg_dasi" src="{% static 'svg/dasi.svg' %}">
+            </a>
+            <div class="nav">
+                <a class="el el_1" href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告</a>
+                <a class="el el_2" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+                <a class="el el_3" href="{% url 'LabWebApp:memberTeacherDetail' %}">实验室成员</a>
+                <a class="el el_4" href="{% url 'LabWebApp:about' %}">关于我们</a>
+                <a class="el el_5" href="{% url 'LabWebApp:graduateMessage' %}">毕业印象</a>
+                <div class="split_el"></div>
+                <div class="nav_out nav_out_1">
+                    <div class="nav_in">
+                        <a class="el_in" href="{% url 'LabWebApp:newsCategory' news_category='research' page_number='1' %}">学术科研</a>
+                        <a class="el_in" href="{% url 'LabWebApp:newsCategory' news_category='achievement' page_number='1' %}">团队喜讯</a>
+                        <a class="el_in" href="{% url 'LabWebApp:newsCategory' news_category='lecture' page_number='1' %}">讲座论坛</a>
+                        <a class="el_in" href="{% url 'LabWebApp:newsCategory' news_category='culture' page_number='1' %}">生活文化</a>
+                    </div>
+                    <img class="svg_building" src="{% static 'svg/building.svg' %}">
+                </div>
+                <div class="nav_out nav_out_2">
+                    <div class="nav_in">
+                        <a class="el_in" href="{% url 'LabWebApp:researchField' %}">研究方向</a>
+                        <a class="el_in" href="{% url 'LabWebApp:researchThesis' %}">论文专利</a>
+                        <a class="el_in" href="{% url 'LabWebApp:researchWork' %}">学术著作</a>
+                        <a class="el_in" href="{% url 'LabWebApp:researchPlatform' %}">研究平台</a>
+                    </div>
+                    <img class="svg_building" src="{% static 'svg/building.svg' %}">
+                </div>
+                <div class="nav_out nav_out_3">
+                    <div class="nav_in">
+                        <a class="el_in" href="{% url 'LabWebApp:memberTeacherDetail' %}">教　　师</a>
+                        <a class="el_in" href="{% url 'LabWebApp:memberStudent' %}">学生团队</a>
+                    </div>
+                    <img class="svg_building" src="{% static 'svg/building.svg' %}">
+                </div>
+                <div class="nav_out nav_out_5">
+                    <div class="nav_in">
+                        <a class="el_in" href="{% url 'LabWebApp:graduateMessage' %}">毕业寄语</a>
+                        <a class="el_in" href="{% url 'LabWebApp:graduateStudent' %}">毕业生</a>
+                    </div>
+                    <img class="svg_building" src="{% static 'svg/building.svg' %}">
+                </div>
+            </div>
+            <img class="svg_navigation" src="{% static 'svg/navigation.svg' %}">
+            <div class="svg_navigation_cover"></div>
+            <div class="nav_hide">
+                <img class="svg_close" src="{% static 'svg/close.svg' %}">
+                <img class="svg_building_hide" src="{% static 'svg/building.svg' %}">
+                <div class="nav_hide_block_1">
+                    <a class="hide_block_el_1" href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告</a>
+                    <div class="nav_hide_block_2">
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='research' page_number='1' %}">学术科研</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='achievement' page_number='1' %}">团队喜讯</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='lecture' page_number='1' %}">讲座论坛</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='culture' page_number='1' %}">生活文化</a>
+                    </div>
+                </div>
+                <div class="nav_hide_block_1">
+                    <a class="hide_block_el_1" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+                    <div class="nav_hide_block_2">
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:researchField' %}">研究方向</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:researchThesis' %}">论文专利</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:researchWork' %}">学术著作</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:researchPlatform' %}">研究平台</a>
+                    </div>
+                </div>
+                <div class="nav_hide_block_1">
+                    <a class="hide_block_el_1" href="{% url 'LabWebApp:memberTeacherDetail' %}">实验室成员</a>
+                    <div class="nav_hide_block_2">
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:memberTeacherDetail' %}">教师</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:memberStudent' %}">学生团队</a>
+                    </div>
+                </div>
+                <div class="nav_hide_block_1">
+                    <a class="hide_block_el_1" href="{% url 'LabWebApp:about' %}">关于我们</a>
+                </div>
+                <div class="nav_hide_block_1">
+                    <a class="hide_block_el_1" href="{% url 'LabWebApp:graduateMessage' %}">毕业印象</a>
+                    <div class="nav_hide_block_2">
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:graduateMessage' %}">毕业寄语</a>
+                        <a class="hide_block_el_2" href="{% url 'LabWebApp:graduateStudent' %}">毕业生</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form_search">
+                <div class="init_show">
+                    <input type="text" class="input_search" id="input_search" onkeypress="searchEnter(this, event)">
+                    <div class="occupy" onclick="search(this)"></div>
+                    <img class="svg_search" src="{% static 'svg/search.svg' %}">
+                </div>
+                <div class="search_active">
+                    <img class="svg_search_active" src="{% static 'svg/search_active.svg' %}">
+                </div>
+            </div>
+            <a class="user" href="{% url 'LabWebApp:userSelf' %}">
+                <div class="user_img" style="background-image: url('/media/{{ user.photo }}');"></div>
+                <label class="user_name">{{ user.username }}</label>
+            </a>
+            <div class="side_label">
+                <div class="side_input">
+                    <input type="text" class="input_search_side" id="input_search_side" onkeypress="searchEnter(this, event)">
+                    <div class="occupy_side" onclick="search(this)"></div>
+                    <img class="svg_search_side" src="{% static 'svg/search.svg' %}">
+                </div>
+                <a class="user_img_side" href="{% url 'LabWebApp:userSelf' %}" style="background-image: url('/media/{{ user.photo }}');"></a>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock body %}
+        <div class="footer">
+            <div class="footer_navigation">
+                <div class="nav_block_1">
+                    <a class="block_el_1" href="{% url 'LabWebApp:newsCategory' news_category='all' page_number='1' %}">新闻公告</a>
+                    <div class="nav_block_2">
+                        <a class="block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='research' page_number='1' %}">学术科研</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='achievement' page_number='1' %}">团队喜讯</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='lecture' page_number='1' %}">讲座论坛</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:newsCategory' news_category='culture' page_number='1' %}">生活文化</a>
+                    </div>
+                </div>
+                <div class="nav_block_1">
+                    <a class="block_el_1" href="{% url 'LabWebApp:researchField' %}">学术研究</a>
+                    <div class="nav_block_2">
+                        <a class="block_el_2" href="{% url 'LabWebApp:researchField' %}">研究方向</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:researchThesis' %}">论文专利</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:researchWork' %}">学术著作</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:researchPlatform' %}">研究平台</a>
+                    </div>
+                </div>
+                <div class="nav_block_1">
+                    <a class="block_el_1" href="{% url 'LabWebApp:memberTeacherDetail' %}">实验室成员</a>
+                    <div class="nav_block_2">
+                        <a class="block_el_2" href="{% url 'LabWebApp:memberTeacherDetail' %}">教师</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:memberStudent' %}">学生团队</a>
+                    </div>
+                </div>
+                <div class="nav_block_1">
+                    <a class="block_el_1" href="{% url 'LabWebApp:about' %}">关于我们</a>
+                </div>
+                <div class="nav_block_1">
+                    <a class="block_el_1" href="{% url 'LabWebApp:graduateMessage' %}">毕业印象</a>
+                    <div class="nav_block_2">
+                        <a class="block_el_2" href="{% url 'LabWebApp:graduateMessage' %}">毕业寄语</a>
+                        <a class="block_el_2" href="{% url 'LabWebApp:graduateStudent' %}">毕业生</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_info">
+                <div class="split_footer"></div>
+                <div class="link">
+                    <a href="http://www.moe.gov.cn/">中华人民共和国教育部 |</a>
+                    <a href="https://www.whu.edu.cn/">武汉大学 |</a>
+                    <a href="https://www.lib.whu.edu.cn/">武汉大学图书馆 |</a>
+                    <a href="https://ehall.whu.edu.cn/">武汉大学信息门户 |</a>
+                    <a href="https://bdi.whu.edu.cn/">武汉大学大数据研究院</a>
+                </div>
+                <div class="info_content">地址：湖北省武汉市武昌区八一路299号大数据研究院 | 邮箱：hong@whu.edu.cn | 公众号：珞珈大数据</div>
+                <div class="info_content">版权所有：武汉大学数据科学与智能应用实验室 | Copyright © 2023 All Rights Reserved</div>
+            </div>
+        </div>
+    </body>
+</html>

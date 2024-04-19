@@ -1,0 +1,32 @@
+{% extends 'adminBase.html' %}
+{% load static %}
+{% block head %}
+    <title>控制台-新闻</title>
+    <script type="text/javascript" src="{% static 'js/tool/sweetalert2.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'js/self/adminNews.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/self/adminNews.css' %}">
+{% endblock head %}
+{% block body %}
+    {% csrf_token %}
+    <div class="operate_panel_container">
+        <label class="operate_panel_title">新闻公告控制台</label>
+        <button type="button" class="btn_add" onclick="window.location.href = 'news/add'">上传新闻</button>
+        <div class="split_news"></div>
+        <div class="operate_panel">
+            {% for item in data %}
+                <div class="operate_panel_item">
+                    <label class="item_number">{{ item.news_num }}　|</label>
+                    <a class="to_news" href="{% url 'LabWebApp:newsDetail' news_url=item.news_id %}">{{ item.news_title }}</a>
+                    <label class="item_time">发布时间：{{ item.news_post_datetime }}</label>
+                    <a class="to_detail" href="{% url 'LabWebApp:adminNewsDetail' news_url=item.news_id %}">编辑</a>
+                    <button type="button" class="btn_delete" id="{{ item.news_id }}" onclick="deleteNews(this)">删除</button>
+                    <div class="split_item"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="correct_alert">
+            <img class="correct_alert_img" src="{% static 'svg/correct.svg' %}">
+            <label class="correct_alert_text">已删除</label>
+        </div>
+    </div>
+{% endblock body %}
